@@ -21,7 +21,7 @@ if (PromedioFinal <= 10) {
     alert("El alumno ha desaprobado");
 
 
-} else {
+} else { 
 
     console.log("Promedio"  +  PromedioFinal.toFixed(2));
     alert("Promedio"  +  PromedioFinal.toFixed(2));
@@ -30,7 +30,6 @@ if (PromedioFinal <= 10) {
     alert("El alumno ha aprobado")
 
 }
-
 
 /*
 
