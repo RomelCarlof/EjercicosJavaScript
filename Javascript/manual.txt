@@ -1,0 +1,80 @@
+PASOS PARA SUBIR UN PROYECTO A GITHUB DESDE CERO
+
+Crear un repositorio en GitHub:
+
+Ve a GitHub
+
+Inicia sesión en tu cuenta.
+
+Crea un nuevo repositorio haciendo clic en New repository.
+
+Asigna un nombre al repositorio (por ejemplo, EjerciciosJavaScript).
+
+Opcionalmente, puedes añadir una descripción y configurar la visibilidad.
+
+No marques la opción de inicializar con un README.
+
+Haz clic en Create repository.
+
+Configurar Git en tu computadora:
+
+Asegúrate de tener Git instalado. Puedes verificarlo con:
+
+git --version
+
+Si no lo tienes instalado, descárgalo desde aquí e instálalo.
+
+Abrir la terminal y posicionarse en el proyecto:
+
+Abre la terminal (cmd, PowerShell, Git Bash o terminal de VS Code).
+
+Navega a la carpeta de tu proyecto con:
+
+cd C:/ruta/del/proyecto
+
+Inicializar Git en el proyecto:
+
+Dentro de la carpeta del proyecto, ejecuta:
+
+git init
+
+Esto creará un repositorio Git local.
+
+Agregar el repositorio remoto:
+
+Conecta tu repositorio local con el de GitHub:
+
+git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git
+
+Para verificar que se agregó correctamente:
+
+git remote -v
+
+Añadir archivos al repositorio:
+
+Agrega todos los archivos del proyecto al control de versiones:
+
+git add .
+
+Confirma los cambios con un mensaje:
+
+git commit -m "Primer commit"
+
+Subir archivos al repositorio en GitHub:
+
+Asegúrate de que la rama se llame main o master. Si el repositorio en GitHub está vacío, usa:
+
+git branch -M main
+
+Sube los cambios al repositorio remoto:
+
+git push -u origin main
+
+Si hay un conflicto porque el repositorio remoto no está vacío, usa:
+
+git pull origin main --allow-unrelated-histories
+git push -u origin main
+
+Verificar en GitHub:
+
+Ve al repositorio en GitHub y verifica que los archivos hayan sido subidos correctamente.
