@@ -19,7 +19,7 @@ class Persona:
     def mostrar_apellido(self):
         print('Tu apellido es:' + self.__apellido)
 
-profesor = Persona('Romel Carlof')
+profesor = Persona('Izaguirre Barbaran')
 profesor.mostrar_apellido()
 
 
