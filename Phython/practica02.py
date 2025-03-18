@@ -1,4 +1,4 @@
-class Persona:
+"""class Persona:
     def __init__(self, nombre):  # Constructor que recibe un nombre
         self.__nombre = nombre  # Almacena el nombre en el objeto
     
@@ -7,4 +7,19 @@ class Persona:
 
 # Crear un objeto de la clase Persona
 profesor = Persona('Romel')
-profesor.mostrar_nombre()  # Llamar correctamente al método
+profesor.mostrar_nombre()  # Llamar correctamente al método"""
+
+
+
+
+class Persona:
+    def __init__(self, apellido):
+        self.__apellido = apellido
+
+    def mostrar_apellido(self):
+        print('Tu apellido es:' + self.__apellido)
+
+profesor = Persona('Romel Carlof')
+profesor.mostrar_apellido()
+
+
