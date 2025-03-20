@@ -30,5 +30,5 @@ class Ropa:
     def mostrar_marca(self):
         print('La marca de la Ropa es: ' + self.__marca)
 
-salida  = marca('Bronco')
+salida  = Ropa('Bronco')
 salida.mostrar_marca()
