@@ -13,8 +13,14 @@ git remote -v
 git fetch backendFullstack
 
 # 4.  Para fucionar y guardar (Mayúsculas + Z dos veces)
-
 SHIFT + ZZ  
+
+# Si prefieres reescribir el historial y aplicar los cambios de backendFullstack/main encima de main, usa:
+git checkout main
+git rebase backendFullstack/main
+
+
+
 
 # 5.  rn caso no funcione la fusión seguir los siguientes pasos 
 git status
