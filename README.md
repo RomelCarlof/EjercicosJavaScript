@@ -12,16 +12,16 @@ git remote -v
 
 git fetch backendFullstack
 
+# 4.  Para fucionar y guardar (Mayúsculas + Z dos veces)
+
+SHIFT + ZZ  
+
+# 5.  rn caso no funcione la fusión seguir los siguientes pasos 
+git status
+git commit
+git commit -m "Finalizando merge"
+git push origin main
+git push origin main
+git status
 
 
-
-# 3.  prueba hacer el fetchcon el nuevo nombre:
-
-
-
-
-# 3.  prueba hacer el fetchcon el nuevo nombre:
-
-
-
-# 3.  prueba hacer el fetchcon el nuevo nombre:
