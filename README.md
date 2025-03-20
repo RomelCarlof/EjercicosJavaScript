@@ -24,4 +24,7 @@ git push origin main
 git push origin main
 git status
 
+# 5. Cambiar a la rama en la que quieres fusionar
+git checkout main
+
 
