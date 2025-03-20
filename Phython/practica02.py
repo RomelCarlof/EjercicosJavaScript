@@ -12,7 +12,7 @@ profesor.mostrar_nombre()  # Llamar correctamente al método"""
 
 
 
-class Persona:
+"""class Persona:
     def __init__(self, apellido):
         self.__apellido = apellido
 
@@ -20,6 +20,15 @@ class Persona:
         print('Tu apellido es:' + self.__apellido)
 
 profesor = Persona('Izaguirre Barbaran')
-profesor.mostrar_apellido()
+profesor.mostrar_apellido() """
 
 
+class Ropa:
+    def __init__(self, marca):
+        self.__marca = marca
+
+    def mostrar_marca(self):
+        print('La marca de la Ropa es: ' + self.__marca)
+
+salida  = marca('Bronco')
+salida.mostrar_marca()
