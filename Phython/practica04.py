@@ -22,6 +22,6 @@ class Persona:
 
 
 # Crear un objeto de la clase Persona
-profesor = Persona('Romel' , 'IZAGUIRRE BARBARAN', 85, 0)
+profesor = Persona('Romel' , 'IZAGUIRRE BARBARAN', 85, 1.75)
 profesor.mostrar__nombre();  # Llamar correctamente al método
 profesor.IMC()  # Llamar al método IMC
