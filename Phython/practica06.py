@@ -3,7 +3,7 @@ class Persona:
         self.__nombre = nombre;  # Almacena el nombre en el objeto
         self.__apellido = apellido; # Almacena el apellido en el objeto
         self.__peso = peso;  # Almacena el peso en el objeto
-        self.__altura = altura;:  # Almacena la altura en el objeto
+        self.__altura = altura;  # Almacena la altura en el objeto
 
     def mostrar__nombre(self):  # Método correcto para mostrar el nombre
         print('Tu nombre es: ' + self.__nombre + ' ' + self.__apellido);
