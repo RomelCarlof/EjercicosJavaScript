@@ -11,7 +11,11 @@ class Persona:
         # print(f'Tu nombre es: {self.__nombre} {self.__apellido}')  # Usar f-strings para mejor legibilidad
 
     def mostrar__direccion(self):  # Método correcto para mostrar la dirección
-        print('Tu direccion es: ' + self.__direccion + ' ' + self.__telefono); 
+        print('Tu direccion es: ' + self.__direccion); 
+        # print(f'Tu nombre es: {self.__nombre} {self.__apellido}')  # Usar f-strings para mejor legibilidad
+
+    def mostrar__telefono(self):  # Método correcto para mostrar la dirección
+        print('Tu direccion es: ' + self.__telefono); 
         # print(f'Tu nombre es: {self.__nombre} {self.__apellido}')  # Usar f-strings para mejor legibilidad
 
 # Crear un objeto de la clase Persona
