@@ -22,3 +22,4 @@ class Persona:
 profesor = Persona('Romel' , 'IZAGUIRRE BARBARAN', 'MICAELA BASTIDA N° 103', '994847647'); 
 profesor.mostrar__nombre();  # Llamar correctamente al método
 profesor.mostrar__direccion();  # Llamar correctamente al método
+profesor.mostrar__telefono();  # Llamar correctamente al método
