@@ -34,3 +34,17 @@ git status
 git checkout main
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+# Si quieres cambiar a esa rama (si aún no lo has hecho), usa:
+
+git checkout main
+
+ # si aún no la tienes localmente, crea la rama y sigue la remota con:
+
+git checkout -b main backendFullstack/main
+
+
+# Si necesitas actualizar los cambios desde el remoto, usa:
+
+git pull backendFullstack main
