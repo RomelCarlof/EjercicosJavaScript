@@ -1,4 +1,4 @@
-//4. Hacer un algoritmo en Pseint que lea tres números enteros y los muestre de menor a mayor.
+#//4. Hacer un algoritmo en Pseint que lea tres números enteros y los muestre de menor a mayor.
 """let num01;
 let num02;
 let num03;
