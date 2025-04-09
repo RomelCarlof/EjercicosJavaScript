@@ -13,7 +13,7 @@ if (isNaN(CantidadZapatos) || CantidadZapatos <= 0) {
 } else {
     // Calcular el total de la compra sin descuento
     TotalCompras = CantidadZapatos * PrecioZapato;
-
+}
 //aplicando Descuento
 
 if (CantidadZapatos > 30) {

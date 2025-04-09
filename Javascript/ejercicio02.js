@@ -30,8 +30,8 @@ Proceso Entero_Positivo_Negativo
 	
 	// Declarar variables
 	Definir numero Como Entero
-	Definir negativo Como Entero
-	
+		Definir negativo Como Entero
+		
 	// Inicializar la variable negativo
 	negativo <- 0  
 	
