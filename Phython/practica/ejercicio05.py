@@ -47,6 +47,6 @@ print("Precio por zapato: " , PrecioZapato)
 
 print("Total de la compra sin descuento: " , TotalCompras)
 
-print("Descuento aplicado: "  (Descuento * 100), "%")
+print("Descuento aplicado: " , int (Descuento * 100), "%")
 
 print("Total con descuento: " , TotalConDescuento)
