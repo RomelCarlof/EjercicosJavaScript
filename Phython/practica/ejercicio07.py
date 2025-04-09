@@ -1,5 +1,5 @@
 
-descuento = 0;  # Inicializar en 0 para evitar errores
+descuento = 0  # Inicializar en 0 para evitar errores
 
 
 tipoMembresia = input("Ingrese el tipo de Menbresía (A,B,C):").toUpperCase()
@@ -11,7 +11,7 @@ totalCompra = int(input("Ingrese el total de la compra:"))
 # SEGUN EL TIPO DE MENBRESÍA
 
 try:
-    totalCompra = input("Por favor, ingrese una cantidad válida de zapatos.")
+    totalCompra = float(input("Por favor, ingrese una cantidad válida de zapatos."))
 
 except ValueError:
     print("Por favor, ingrese una cantidad válida de zapatos.")
@@ -29,7 +29,7 @@ tipoMembresia = input("Ingrese el tipo de membresía (A, B, C): ").upper() # upp
 
 # Simulación de un switch con un diccionario
 
-descuento ={
+descuentos ={
     "A": totalCompra * 0.10,
     "B": totalCompra * 0.15,
     "C": totalCompra * 0.20
