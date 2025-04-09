@@ -35,7 +35,7 @@ descuentos ={
     "C": totalCompra * 0.20
 }
 # Si el tipo de membresía no está en el diccionario, asignamos descuento 0
-descuento = descuento.get(tipoMembresia, 0)
+descuento = descuentos.get(tipoMembresia, 0)
  
 #calcular el total a pagar 
 
