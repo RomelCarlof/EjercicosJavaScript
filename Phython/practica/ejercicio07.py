@@ -2,9 +2,12 @@
 descuento = 0  # Inicializar en 0 para evitar errores
 
 
-tipoMembresia = input("Ingrese el tipo de Menbresía (A,B,C):").toUpperCase()
+tipoMembresia = input("Ingrese el tipo de membresía (A, B, C): ").upper() # upper sirve para poner todo en mayuscula
 
 totalCompra = int(input("Ingrese el total de la compra:"))
+# Solicitar tipo de membresía
+
+
 
 
 # PRIMER DESCUENTO
@@ -22,9 +25,6 @@ if totalCompra <= 0:
     print("Por favor, ingrese una cantidad válida de zapatos.")
     exit()
 
-# Solicitar tipo de membresía
-
-tipoMembresia = input("Ingrese el tipo de membresía (A, B, C): ").upper() # upper sirve para poner todo en mayuscula
 
 
 # Simulación de un switch con un diccionario
