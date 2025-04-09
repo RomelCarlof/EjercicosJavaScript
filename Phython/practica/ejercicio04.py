@@ -31,4 +31,4 @@ if num01 > num02:
     num01 = num02
     num02 = Intercambio
 
-print("Los números ordenados son:", num01, num02, num03)
+print("Los números ordenados son:", num01, ",", num02, ",", num03)
