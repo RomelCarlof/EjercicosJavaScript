@@ -12,15 +12,15 @@ totalCompra = float(input("Ingrese el total de la compra:"))
 # SEGUN EL TIPO DE MENBRESÍA
 
 try:
-    totalCompra = int(input("Por favor, ingrese una cantidad válida de zapatos."))
+    totalCompra = int(input("Por favor, ingrese una cantidad válida de zapatos:"))
 
 except ValueError:
-    print("Por favor, ingrese una cantidad válida de zapatos.")
+    print("Por favor, ingrese una cantidad válida de zapatos:")
     exit()
 
 # Validar si el número ingresado es positivo 
 if totalCompra <= 0:
-    print("Por favor, ingrese una cantidad válida de zapatos.")
+    print("Por favor, ingrese una cantidad válida de zapatos:")
     exit()
 
 
