@@ -18,20 +18,20 @@ if CantidadZapatos <= 0:
 
 else :
     # Calcular el total de la compra sin descuento
-    TotalCompras = CantidadZapatos * PrecioZapato;
+    TotalCompras = CantidadZapatos * PrecioZapato
 
 #aplicando Descuento
 
-if CantidadZapatos > 30:
-    Descuento = 0.4; #descuento al 40%
+    if CantidadZapatos > 30:
+        Descuento = 0.4; #descuento al 40%
 
-elif CantidadZapatos > 20:
-    Descuento = 0.2; # descuento al 20% 
+    elif CantidadZapatos > 20:
+        Descuento = 0.2; # descuento al 20% 
 
-elif CantidadZapatos > 10:
-    Descuento = 0.1; # descuento al 10% 
-else:
-    Descuento = 0;  # no se aplica Descuento
+    elif CantidadZapatos > 10:
+        Descuento = 0.1; # descuento al 10% 
+    else:
+        Descuento = 0;  # no se aplica Descuento
 
 
 # Calcular el total con descuento
