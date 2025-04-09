@@ -4,17 +4,15 @@ descuento = 0  # Inicializar en 0 para evitar errores
 
 tipoMembresia = input("Ingrese el tipo de membresía (A, B, C): ").upper() # upper sirve para poner todo en mayuscula
 
-totalCompra = int(input("Ingrese el total de la compra:"))
+totalCompra = float(input("Ingrese el total de la compra:"))
 # Solicitar tipo de membresía
-
-
 
 
 # PRIMER DESCUENTO
 # SEGUN EL TIPO DE MENBRESÍA
 
 try:
-    totalCompra = float(input("Por favor, ingrese una cantidad válida de zapatos."))
+    totalCompra = int(input("Por favor, ingrese una cantidad válida de zapatos."))
 
 except ValueError:
     print("Por favor, ingrese una cantidad válida de zapatos.")
