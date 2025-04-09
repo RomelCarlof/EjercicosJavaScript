@@ -40,13 +40,13 @@ TotalConDescuento = TotalCompras - (TotalCompras * Descuento)
 
 # Mostrar resultados en consola y alertas
 
-print("Cantidad de zapatos: " + CantidadZapatos)
+print("Cantidad de zapatos: " , CantidadZapatos)
 
 
-print("Precio por zapato: " + PrecioZapato)
+print("Precio por zapato: " , PrecioZapato)
 
-print("Total de la compra sin descuento: " + TotalCompras)
+print("Total de la compra sin descuento: " , TotalCompras)
 
-print("Descuento aplicado: " + (Descuento * 100) + "%")
+print("Descuento aplicado: "  (Descuento * 100), "%")
 
-print("Total con descuento: " + TotalConDescuento)
+print("Total con descuento: " , TotalConDescuento)
