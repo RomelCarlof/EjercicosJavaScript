@@ -14,8 +14,6 @@ if PromedioFinal <= 10:
     print( "Promedio" , PromedioFinal)
     print(" El alumno ha desaprobado")
 
-
-
 else :
     
     print(f"Promedio: {PromedioFinal:.2f}")
