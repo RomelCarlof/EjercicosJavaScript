@@ -1,7 +1,7 @@
 
 
-num01 = float(input("Ingrese el primer número:"))
-num02 = float(input("Ingrese el segundo número:"))
+num01 = int(input("Ingrese el primer número:"))
+num02 = int(input("Ingrese el segundo número:"))
 
 
 if num01 < num02:
@@ -12,4 +12,4 @@ if num01 < num02:
 
 
 # Mostrar el resultado ordenado (mayor a menor)
-print("Los numeros ordenados son:" , num01  "," , num02)
+print("Los numeros ordenados son:" , num01  , num02)
