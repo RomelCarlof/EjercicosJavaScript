@@ -1,8 +1,8 @@
 
 
-num01 = float(input("Ingrese el primer número:"))
-num02 = float(input("Ingrese el segundo número:"))
-num03 = float(input("Ingrese el tercer número:"))
+num01 = int(input("Ingrese el primer número:"))
+num02 = int(input("Ingrese el segundo número:"))
+num03 = int(input("Ingrese el tercer número:"))
 
 # Ordenamiento en orden descendente (mayor a menor)
 if num01 < num02: 
