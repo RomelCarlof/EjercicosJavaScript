@@ -12,4 +12,4 @@ if num01 < num02:
 
 
 # Mostrar el resultado ordenado (mayor a menor)
-print("Los numeros ordenados son:" , num01 + "," , num02)
+print("Los numeros ordenados son:" , num01  "," , num02)
