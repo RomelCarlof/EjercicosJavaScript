@@ -7,7 +7,6 @@ if Paga <= 2000:
 	#// Mostrar 
 	print("Tipo de Paga con Aumento" , " " , AumentoTotal)
 
-
 else:
 	AumentoTotal=(Paga+(Paga*0.05))
 	#Mostrar 
