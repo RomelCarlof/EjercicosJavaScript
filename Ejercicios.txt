@@ -1,0 +1,1320 @@
+EJERCICIOS PROPUESTOS Y DESARROLLADOS
+
+1. Hacer un algoritmo en Pseint que lea un número por el teclado y determinar si tiene tres dígitos.
+Proceso SUNA
+	Numero1 = 0
+	Numero2 = 0
+	Escribir "Escribe el primer numero a sumar"
+	
+	Leer Numero1
+	
+	Escribir "Escribe el segundo numero a sumar"
+	
+	Leer Numero2
+	
+	resultado = Numero1+ Numero2
+	escribir "El resultado es " resultado
+	
+FinProceso
+2. Hacer un algoritmo en Pseint que lea un número entero por el teclado y determinar si es negativo.
+//Hacer un algoritmo en Pseint que lea un número entero por el teclado y determinar si es negativo.
+
+Proceso Entero_Positivo_Negativo
+	
+	// Declarar variables
+	Definir numero Como Entero
+	Definir negativo Como Entero
+	
+	// Inicializar la variable negativo
+	negativo <- 0  
+	
+	// Solicitar entrada al usuario
+	Escribir "Ingrese un número:"
+	Leer numero  // Leer el número ingresado por el usuario
+	
+	// Evaluar si el número es negativo
+	Si numero < 0 Entonces
+		negativo <- 1  // Marcar que el número es negativo
+	FinSi
+	
+	// Mostrar resultados al usuario
+	Si negativo = 1 Entonces
+		Escribir "El número ingresado es negativo"
+	SiNo
+		Escribir "El número ingresado es positivo"
+	FinSi
+	
+FinProceso
+
+
+3. Hacer un algoritmo en Pseint que lea un número y determinar si termina en 4.
+//3. Hacer un algoritmo en Pseint que lea un número y determinar si termina en 4.
+Proceso Entero_Positivo_Negativo
+	
+	// Declarar variables
+	Definir nummero Como Entero
+	Definir ultimoDigito Como Entero
+	
+	Escribir "Ingrese un numero:"
+	Leer numero
+	
+	ultimoDigito <-  numero % 10
+	
+	Si ultimoDigito = 4 Entonces
+		Escribir "El numnero termina en 4"
+	SiNo
+		Escribir  " El numero no termina en 4"
+	FinSi
+	
+FinProceso
+
+4. Hacer un algoritmo en Pseint que lea tres números enteros y los muestre de menor a mayor.
+//4. Hacer un algoritmo en Pseint que lea tres números enteros y los muestre de menor a mayor.
+Proceso Numeros_eNTEROS_mAYOR_mENOR 
+	Definir num01 Como Entero
+	Definir num02 Como Entero
+	Definir num03 Como Entero
+	Definir Intercambio Como Entero
+	
+	Escribir "Ingrese el primer número:"
+	Leer num01
+	
+	Escribir "Ingrese el segundo número:"
+	Leer num02
+	
+	Escribir "Ingrese el tercer número:"
+	Leer num03
+	
+	Si num01 > num02 Entonces
+		Intercambio <- num01
+		num01 <- num02
+		num02 <- Intercambio
+	FinSi
+	
+	Si num02 > num03 Entonces
+		Intercambio<- num02
+		num02 <- num03
+		num03 <- Intercambio
+	FinSi
+	
+	Si num01 > num02 Entonces
+		Intercambio <- num01
+		num01 <- num02
+		num02 <- Intercambio
+	FinSi
+	
+	Escribir "Los numeros ordenados son:" "," num01, "," num02, "," num03
+	
+FinProceso
+////de mayor a menor 
+//4. Hacer un algoritmo en Pseint que lea tres números enteros y los muestre de mayor a menor.
+Proceso Numeros_eNTEROS_mAYOR_mENOR
+	Definir num01 Como Entero
+	Definir num02 Como Entero
+	Definir num03 Como Entero
+	Definir Intercambio Como Entero
+	
+	Escribir "Ingrese el primer número:"
+	Leer num01
+	
+	Escribir "Ingrese el segundo número:"
+	Leer num02
+	
+	Escribir "Ingrese el tercer número:"
+	Leer num03
+	
+	Si num01 < num02 Entonces
+		Intercambio <- num01
+		num01 <- num02
+		num02 <- Intercambio
+	FinSi
+	
+	Si num02 < num03 Entonces
+		Intercambio<- num02
+		num02 <- num03
+		num03 <- Intercambio
+	FinSi
+	
+	Si num01 < num02 Entonces
+		Intercambio <- num01
+		num01 <- num02
+		num02 <- Intercambio
+	FinSi
+	
+	Escribir "Los numeros ordenados son:" "," num01, "," num02, "," num03
+	
+FinProceso
+
+//// cuatro números de mayor a menor 
+//4. Hacer un algoritmo en Pseint que lea cuatro números enteros y los muestre de mayor a menor.
+Proceso Numeros_eNTEROS_mAYOR_mENOR
+	Definir num01 Como Entero
+	Definir num02 Como Entero
+	Definir num03 Como Entero
+	Definir num04 Como Entero
+	Definir Intercambio Como Entero
+	
+	Escribir "Ingrese el primer número:"
+	Leer num01
+	
+	Escribir "Ingrese el segundo número:"
+	Leer num02
+	
+	Escribir "Ingrese el tercer número:"
+	Leer num03
+	
+	Escribir "Ingrese el cuarto número:"
+	Leer num04
+	
+	Si num01 < num02 Entonces
+		Intercambio <- num01
+		num01 <- num02
+		num02 <- Intercambio
+	FinSi
+	
+	Si num02 < num03 Entonces
+		Intercambio<- num02
+		num02 <- num03
+		num03 <- Intercambio
+	FinSi
+	
+	Si num03 < num04 Entonces
+		Intercambio<- num03
+		num03 <- num04
+		num04 <- Intercambio
+	FinSi
+	
+	Si num01 < num02 Entonces
+		Intercambio <- num01
+		num01 <- num02
+		num02 <- Intercambio
+	FinSi
+	
+	Escribir "Los numeros ordenados son:" "," num01, "," num02, "," num03, "," num04
+	
+FinProceso
+5. Hacer un algoritmo en Pseint para una tienda de zapatos que tiene una promoción de descuento para vender al mayor, esta dependerá del número de zapatos que se compren. Si son más de diez, se les dará un 10% de descuento sobre el total de la compra; si el número de zapatos es mayor de veinte pero menor de treinta, se le otorga un 20% de descuento; y si son más treinta zapatos se otorgará un 40% de descuento. El precio de cada zapato es de $80.
+//5. Hacer un algoritmo en Pseint para una tienda de zapatos que tiene 
+//una promoción de descuento para vender al mayor, esta dependerá del 
+//número de zapatos que se compren. Si son más de diez, se les dará un 
+//10% de descuento sobre el total de la compra; si el número de zapatos 
+//es mayor de veinte pero menor de treinta, se le otorga un 20% de descuento; 
+//y si son más treinta zapatos se otorgará un 40% de descuento. El precio de cada zapato es de $80.
+Proceso Calcula_Descuentos
+	// Constante que representa el precio de cada zapato
+	PrecioZapato<- 80
+	
+	// Defición de cada variable
+	Definir CantidadZapatos Como Entero
+	Definir Totaldescuento,TotalCompras, Descuento Como real
+	
+	// Entrada de Datos
+	Escribir "Ingrese la cantidad de Zapatos va comprar de acuerdo a eso se le aplicara el descuento respectivo:"
+	Leer CantidadZapatos
+	
+	// Calcular el total de compra sin Descuento
+	
+	TotalCompras= CantidadZapatos*PrecioZapato
+	
+	//aplicando Descuento
+	
+	Si CantidadZapatos > 30 Entonces
+		Descuento <- 0.4 //descuento al 40%
+		
+	SiNo
+		Si CantidadZapatos > 20 Entonces
+			Descuento <- 0.2 // descuento al 20% 
+		SiNo
+			Si CantidadZapatos > 10 Entonces
+				Descuento <- 0.1 // descuento al 10% 
+			SiNo
+				Descuento <- 0  // no se aplica Descuento
+			FinSi
+		FinSi
+	FinSi
+	// Calcular el total con descuento
+    totalConDescuento <- totalCompras - (totalCompras * descuento)
+	 //Mostrar resultados
+	Escribir "Cantidad de zapatos:", CantidadZapatos
+    Escribir "Precio por zapato:", PrecioZapato
+    Escribir "Total de la compra sin descuento:", totalCompras
+    Escribir "Descuento aplicado:", descuento * 100, "%"
+    Escribir "Total con descuento:", totalConDescuento
+	
+FinProceso
+
+6. Hacer un algoritmo en Pseint para ayudar a un trabajador a saber cuál será su sueldo semanal, se sabe que si trabaja 40 horas o menos, se le pagará $20 por hora, pero si trabaja más de 40 horas entonces las horas extras se le pagarán a $25 por hora.
+
+//6. Hacer un algoritmo en Pseint para ayudar a un trabajador a saber cuál será su sueldo semanal,
+//se sabe que si trabaja 40 horas o menos, se le pagará $20 por hora, pero si trabaja más de 40 horas 
+//entonces las horas extras se le pagarán a $25 por hora.
+Proceso Calculo_Salario
+	Definir HorasTrabajadas Como Entero
+	Definir SalarioBase, SalarioTotal Como Real
+	
+	Escribir "Ingrese las horas trabajadas a la semana:"
+	Leer HorasTrabajadas
+	
+	Si HorasTrabajadas <= 40 Entonces
+		SalarioBase = HorasTrabajadas * 20
+	SiNo
+		SalarioBase = HorasTrabajadas * 20 + (HorasTrabajadas-40) * 25
+	FinSi
+	
+	//Mostrar resultados
+	Escribir "Horas trabajadas:", HorasTrabajadas
+    Escribir "Salario Base:", SalarioBase
+
+FinProceso
+7. Hacer un algoritmo en Pseint para una tienda de helado que da un descuento por compra a sus clientes con membresía dependiendo de su tipo, sólo existen tres tipos de membresía, tipo A, tipo B y tipo C. Los descuentos son los siguientes:
+
+   Tipo A 10% de descuento
+   Tipo B 15% de descuento
+   Tipo C 20% de descuento
+
+//7. Hacer un algoritmo en Pseint para una tienda de helado que da un descuento por compra a sus clientes con membresía
+//dependiendo de su tipo, sólo existen tres tipos de membresía, tipo A, tipo B y tipo C. Los descuentos son los siguientes:
+Algoritmo Tienda_Helado
+	// Variables
+    Definir tipoMembresia Como Caracter
+    Definir totalCompra, descuento, totalConDescuento Como Real
+	
+	Escribir "Ingrese el tipo de Menbresia:"
+	Leer tipoMembresia
+	
+	Escribir "Ingrese el Total de Compras:"
+	Leer totalCompra
+	
+	//PRIMER DESCUENTO
+	// SEGUN EL TIPO DE MENBRESÍA
+	Segun tipoMembresia Hacer
+	
+	Caso "A":
+		descuento <- totalCompra * 0.10
+		
+	Caso "B":
+		descuento <- totalCompra * 0.15
+		
+	caso "C":
+		
+		descuento <- totalCompra * 0.20
+		
+	otrocaso:
+		desceunto <- 0
+	
+FinSegun
+
+//calcular el total a pagar 
+
+totalConDescuento <- totalCompra - descuento
+
+// Mostrar 
+	escribir "Tipo de Menbresía:", tipoMembresia
+	escribir "Total de Compra:", totalCompra  
+	escribir "Descuento aplicado:", descuento
+	escribir "Total con Descuento:", totalConDescuento
+FinAlgoritmo
+
+8. Hacer un algoritmo en Pseint para calcular el promedio de tres notas y determinar si el estudiante aprobó o no.
+//Hacer un algoritmo en Pseint para calcular el promedio de tres notas y determinar si el estudiante aprobó o no.
+Algoritmo Promedio_Notas
+	
+	Definir nota1, nota2, nota3, PromedioFinal Como Real
+	
+	Escribir "Ingrese la primera nota:"
+	Leer nota1
+	
+	Escribir " Ingrese la segunda nota:"
+	Leer nota2
+	
+	Escribir "Ingrese la tercera nota:"
+	Leer nota3
+	
+
+	//cálculo del promedio Final
+	
+	PromedioFinal <- (nota1+nota2+nota3)/3
+	
+	Si PromedioFinal <= 10 Entonces
+		Escribir "Promedio", PromedioFinal 
+		Escribir "El alumno ha desaprobado:"
+		
+	SiNo
+		Escribir "Promedio", PromedioFinal
+		Escribir "El alumno ha aprobado"
+
+FinSi
+
+FinAlgoritmo
+
+9. Hacer un algoritmo en Pseint para determinar el aumento de un trabajador, se debe tomar en cuenta que si ganaba más de $2000 tendrá un aumento del 5%, si generaba menos de $2000 su aumento será de un 10%.
+
+//9. Hacer un algoritmo en Pseint para determinar el aumento de un trabajador, se debe tomar en cuenta 
+//que si ganaba más de $2000 tendrá un aumento del 5%, si generaba menos de $2000 su aumento será de un 10%.
+Algoritmo Aumento_Personal
+	// Variables
+    Definir Paga, AumentoTotal Como Real
+	
+	Escribir "Ingrese el Pago por mes:"
+	Leer Paga
+	
+	//SUELDO POR MES
+	// SEGUN EL TIPO DE PAGO
+	Si Paga <= 2000 Entonces
+		AumentoTotal= (Paga+(Paga*0.10))
+		// Mostrar 
+		Escribir "Tipo de Paga con Aumento", " ", AumentoTotal
+	SiNo
+		AumentoTotal=(Paga+(Paga*0.05))
+		// Mostrar 
+		Escribir "Tipo de Paga con Aumento", " ", AumentoTotal
+	FinSi
+FinAlgoritmo
+
+10. Hacer un algoritmo en Pseint que diga si un número es par o impar.
+
+//10. Hacer un algoritmo en Pseint que diga si un número es par o impar.
+Algoritmo Numero_Par_Impar
+	// Variables
+    Definir Numero01, NumeroPar, NumeroImpart Como Real
+	
+	// Declarar variables
+	Definir nummero Como Entero
+	
+	Escribir "Ingrese un numero:"
+	Leer nummero
+	
+
+	Si (nummero MOD 2 = 0) Entonces
+		
+		Escribir "El numnero es par"
+	SiNo
+		Escribir  " El numero es impar"
+	FinSi
+	
+FinProceso
+
+11. Hacer un algoritmo en Pseint que lea tres números y diga cuál es el mayor.
+
+//11. Hacer un algoritmo en Pseint que lea tres números y diga cuál es el mayor.
+
+Algoritmo Numero_MayoR_mENOR
+	
+		Definir num01 Como Entero
+		Definir num02 Como Entero
+		Definir num03 Como Entero
+		Definir Intercambio Como Entero
+		
+		Escribir "Ingrese el primer número:"
+		Leer num01
+		
+		Escribir "Ingrese el segundo número:"
+		Leer num02
+		
+		Escribir "Ingrese el tercer número:"
+		Leer num03
+		
+		Si num01 < num02 Entonces
+			Intercambio <- num01
+			num01 <- num02
+			num02 <- Intercambio
+		FinSi
+		
+		Si num02 < num03 Entonces
+			Intercambio<- num02
+			num02 <- num03
+			num03 <- Intercambio
+		FinSi
+		
+		Si num01 < num02 Entonces
+			Intercambio <- num01
+			num01 <- num02
+			num02 <- Intercambio
+		FinSi
+		
+		Escribir "Los numeros ordenados son:" "," num01, "," num02, "," num03
+
+	
+FinProceso
+12. Hacer un algoritmo en Pseint que lea dos números y diga cuál es el mayor.
+
+//11. Hacer un algoritmo en Pseint que lea tres números y diga cuál es el mayor.
+
+Algoritmo Numero_MayoR_mENOR
+	
+		Definir num01 Como Entero
+		Definir num02 Como Entero
+		Definir Intercambio Como Entero
+		
+		Escribir "Ingrese el primer número:"
+		Leer num01
+		
+		Escribir "Ingrese el segundo número:"
+		Leer num02
+		
+	
+		Si num01 < num02 Entonces
+			Intercambio <- num01
+			num01 <- num02
+			num02 <- Intercambio
+		FinSi
+		
+		
+		Si num01 < num02 Entonces
+			Intercambio <- num01
+			num01 <- num02
+			num02 <- Intercambio
+		FinSi
+		
+		Escribir "Los numeros ordenados son:" "," num01, "," num02 
+
+FinProceso
+
+13. Hacer un algoritmo en Pseint que lea una letra y diga si es una vocal.
+
+//11. Hacer un algoritmo en Pseint que lea tres números y diga cuál es el mayor.
+
+Algoritmo Numero_MayoR_mENOR
+	//Definir variables
+	Definir letra Como Caracter
+	
+	Escribir "Ingrese un letra:"
+	Leer letra
+	
+	Si (letra = "a") O (letra = "A") O (letra = "e") O (letra = "E") O (letra = "i") O (letra = "I") O (letra = "o")O  (letra = "O") O ( letra = "u") O ( letra = "U")Entonces
+		Escribir "La letra es un vocal"
+	SiNo
+		
+	Escribir "La letra no es una vocal"
+FinSi
+FinProceso
+
+14. Hacer un algoritmo en Pseint que lea un entero positivo del 1 al diez y al 9 y determine si es un número primo.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+Algoritmo NumeroPrimo_Case
+    Definir n Como Entero
+    
+    Escribir "Ingrese un número entero positivo (1..9 o 1..10):"
+    Leer n
+    
+    Segun n Hacer
+        1: 
+            Escribir "No es primo"   // 1 no se considera primo
+        2:
+            Escribir "Es primo"
+        3:
+            Escribir "Es primo"
+        4:
+            Escribir "No es primo"
+        5:
+            Escribir "Es primo"
+        6:
+            Escribir "No es primo"
+        7:
+            Escribir "Es primo"
+        8:
+            Escribir "No es primo"
+        9:
+            Escribir "No es primo"
+			// Si deseas incluir el 10:
+        10:
+            Escribir "No es primo"
+        De Otro Modo:
+            Escribir "El número está fuera del rango esperado."
+    FinSegun
+FinAlgoritmo
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+Algoritmo NumeroPrimo
+    Definir num, i, contador Como Entero
+	
+    // Pedir al usuario un número
+    Escribir "Ingresa un número entero positivo (1..10):"
+    Leer num
+	
+    // Validar que el número esté en el rango de 1 a 10
+	Repetir
+		Si (num < 1) O (num > 10) Entonces
+			Escribir "El número está fuera del rango 1..10."
+			Escribir "Ingresa un número nuevamente:"
+			Leer num
+		FinSi
+	Hasta Que num >= 1 Y num <= 10
+
+
+	// Caso especial: si el número es menor que 2, no es primo
+	Si (num < 2) Entonces
+		Escribir "El número NO es primo."
+	FinSi
+	
+	// Repetir
+	//     Si (num = 0) Entonces
+	//         Escribir "El número NO es correcto"
+	//         Escribir "Ingresa un número nuevamente:"
+	//         Leer num
+	//     FinSi
+	// Hasta Que num <> 0
+
+
+
+	// Iniciar contador de divisores
+	contador <- 0
+
+	// Probar divisiones desde 1 hasta el número
+	// Probar divisiones desde 1 hasta el número
+	Para i <- 1 Hasta num Hacer
+		// Verificar si 'i' es un divisor de 'num'
+		Si (num MOD i = 0) Entonces
+			// Incrementar el contador de divisores
+			contador <- contador + 1
+			// Mostrar el divisor encontrado
+			Escribir "Divisor encontrado:", i
+		FinSi
+	FinPara
+
+
+	// Determinar si es primo
+	Si contador = 2 Entonces
+		Escribir "El número ES primo."
+	Sino
+		Escribir "El número NO es primo."
+	FinSi
+FinAlgoritmo
+15. Hacer un algoritmo en Pseint que convierta centímetros a pulgadas y libras a kilogramos.
+Algoritmo Convertidor_Pulgadas_Kilogramo
+    Definir TotPulgadas, LibrasCant, CentimetroCant, TotKilo Como Real 
+    
+    Escribir "Ingrese una cantidad en Centímetros:"
+    Leer CentimetroCant
+    
+    Escribir "Ingrese una cantidad en Libras:"
+    Leer LibrasCant
+    
+    // Calcular conversiones
+    TotPulgadas = CentimetroCant / 2.54
+    TotKilo = LibrasCant * 0.453592
+    
+    // Mostrar resultados
+    Escribir "TOTAL DE CÁLCULO EN PULGADAS: ", TotPulgadas
+    Escribir "TOTAL DE CÁLCULO EN KILOGRAMOS: ", TotKilo
+FinAlgoritmo
+16. Hacer un algoritmo en Pseint que lea un número y según ese número, indique el día que corresponde.
+Algoritmo DiaDeLaSemana
+    Definir numero Como Entero
+    Repetir
+        Escribir "Ingrese un número del 1 al 7:"
+        Leer numero
+		
+        Segun numero Hacer
+            1: Escribir "Lunes"
+            2: Escribir "Martes"
+            3: Escribir "Miércoles"
+            4: Escribir "Jueves"
+            5: Escribir "Viernes"
+            6: Escribir "Sábado"
+            7: Escribir "Domingo"
+			De Otro Modo:
+				Escribir "Número inválido. Intente nuevamente."
+        FinSegun
+    Hasta Que (numero >= 1 Y numero <= 7)
+FinAlgoritmo
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Algoritmo DiaDeLaSemana
+    Definir numero Como Entero
+    Repetir
+        Escribir "Ingrese un número del 1 al 7:"
+        Leer numero
+		
+        Si numero = 1 Entonces
+            Escribir "Lunes"
+        Sino 
+			Si numero = 2 Entonces
+				Escribir "Martes"
+			Sino 
+				Si numero = 3 Entonces
+					Escribir "Miércoles"
+				Sino
+					Si numero = 4 Entonces
+						Escribir "Jueves"
+					Sino
+						Si numero = 5 Entonces
+							Escribir "Viernes"
+						Sino
+							Si numero = 6 Entonces
+								Escribir "Sábado"
+							Sino 
+								Si numero = 7 Entonces
+									Escribir "Domingo"
+								Sino
+									Escribir "Número inválido. Intente nuevamente."
+								FinSi
+								
+							FinSi
+						FinSi
+					FinSi
+				FinSi	
+			FinSi
+		FinSi
+	Hasta Que (numero >= 1 Y numero <= 7)
+
+
+FinAlgoritmo17. Hacer un algoritmo en Pseint donde se ingrese una hora y nos calcule la hora dentro de un segundo.
+
+
+Algoritmo CalcularHora
+	Definir horas, minutos, segundoss Como Entero
+	
+	//Pedir al usuario que ingrese la hora actual
+	Escribir "Ingrrese la hora (0-23):"
+	Leer horas
+	Escribir "Ingrrese los minutos (0-59):"
+	Leer  minutos
+	Escribir "Ingrrese los segundos (0-59):"
+	Leer segundoss
+	
+	//Sumar en segundos 
+	segundoss <- segundoss+1
+	
+	//Si los segundos llegan a 60, reiniciar y sumar un minuto
+	Si segundoss = 60 Entonces
+		segundoss <- 0
+		minutos <- minutos +1
+	FinSi
+	
+	//Si los  minutos llegan a 60, reiniciar y sumar una hora
+	Si minutos = 60 Entonces
+		minutos <- 0
+		horas <- horas +1
+	FinSi
+	
+	//Si las horas llegan a 24, reiniciar el día
+	Si horas = 24 Entonces
+		horas <- 0
+	FinSi
+	
+	//Mostrar la hora actualizada
+	
+	Escribir "La hora dentro de un segundo es: ", horas, ":", minutos, ":", segundoss
+	
+FinAlgoritmo
+
+18. Hacer un algoritmo en Pseint para una empresa se encarga de la venta y distribución de CD vírgenes. Los clientes pueden adquirir los artículos (supongamos un único producto de una única marca) por cantidad. Los precios son:
+
+    $10. Si se compran unidades separadas hasta 9.
+
+    $8. Si se compran entre 10 unidades hasta 99.
+
+    $7. Entre 100 y 499 unidades.
+
+    $6. Para mas de 500 unidades.
+
+Algoritmo Calcular_Precio
+    Definir cantidad, precio, total Como Entero
+        // Solicitar la cantidad de CDs a comprar
+        Escribir "Ingrese la cantidad de CDs vírgenes que desea comprar:"
+        Leer cantidad
+// Determinar el precio unitario según la cantidad
+	Si cantidad <= 9 Entonces
+		precio <-10
+	Sino
+		Si cantidad >=10 y cantidad <=99 Entonces
+			precio <- 8
+		Sino
+			Si cantidad >= 100 y cantidad <=499 Entonces
+				precio <- 7
+			Sino 
+				// Para cantidades de 500 o más 
+precio <- 6
+			Finsi
+		Finsi
+	Finsi
+// Calcular el total a pagar 
+total <- cantidad * precio 
+// Mostrar resultados
+ Escribir "El precio unitario es: $", precio 
+Escribir "El total a pagar es: $", total
+ FinAlgoritmo
+
+
+    La ganancia para el vendedor es de 8,25 % de la venta. Realizar un algoritmo en Pseint que dado un número de CDs a vender calcule el precio total para el cliente y la ganancia para el vendedor.
+Algoritmo Calcular_Precio_Ganancia
+    Definir cantidad, precio, total Como Entero
+    Definir ganancia Como Real
+        // Solicitar la cantidad de CDs a comprar
+        Escribir "Ingrese la cantidad de CDs vírgenes que desea comprar:"
+        Leer cantidad
+// Determinar el precio unitario según la cantidad
+	Si cantidad <= 9 Entonces
+		precio <-10
+	Sino
+		Si cantidad >=10 y cantidad <=99 Entonces
+			precio <- 8
+		Sino
+			Si cantidad >= 100 y cantidad <=499 Entonces
+				precio <- 7
+			Sino 
+				// Para cantidades de 500 o más 
+precio <- 6
+			Finsi
+		Finsi
+	Finsi
+// Calcular el total a pagar 
+total <- cantidad * precio 
+ganancia <- precio*0.0825
+// Mostrar resultados
+ Escribir "El precio unitario es: $", precio 
+ Escribir "El total a pagar es: $", total
+Escribir "La ganancia para el vendedor es: $", ganancia
+
+ FinAlgoritmo
+
+
+19. Hacer un algoritmo en Pseint para una heladería se tienen 4 tipos de empleados ordenados de la siguiente forma con su número identificador y salario diario correspondiente:
+
+    Cajero (56$/día).
+
+    Servidor (64$/día).
+
+    Preparador de mezclas (80$/día).
+
+    Mantenimiento (48$/día).
+
+    El dueño de la tienda desea tener un programa donde sólo ingrese dos números enteros que representen al número identificador del empleado y la cantidad de días que trabajó en la semana (6 días máximos). Y el programa le mostrará por pantalla la cantidad de dinero que el dueño le debe pagar al empleado que ingresó
+
+Algoritmo pago_empleado_heladeria
+    Definir id, dias, salario, total Como Entero
+	
+    // Solicitar y validar el número identificador del empleado (debe ser 1 a 4)
+    Repetir
+        Escribir "Ingrese el número identificador del empleado:"
+        Escribir "1 - Cajero ($56/día)"
+        Escribir "2 - Servidor ($64/día)"
+        Escribir "3 - Preparador de mezclas ($80/día)"
+        Escribir "4 - Mantenimiento ($48/día)"
+        Leer id
+        Si id < 1 O id > 4 Entonces
+            Escribir "Número de empleado inválido. Por favor, ingrese un número entre 1 y 4."
+        FinSi
+    Hasta Que id >= 1 Y id <= 4
+	
+    // Solicitar y validar la cantidad de días trabajados (máximo 6)
+    Repetir
+        Escribir "Ingrese la cantidad de días trabajados en la semana (máximo 6):"
+        Leer dias
+        Si dias > 6 Entonces
+            Escribir "La cantidad de días ingresada excede el máximo permitido (6 días)."
+        FinSi
+    Hasta Que dias <= 6
+	
+    // Asignar el salario diario según el identificador del empleado
+    Segun id Hacer
+        Caso 1:
+            salario <- 56
+        Caso 2:
+            salario <- 64
+        Caso 3:
+            salario <- 80
+        Caso 4:
+            salario <- 48
+    FinSegun
+	
+    // Calcular el total a pagar
+    total <- salario * dias
+	
+    // Mostrar el resultado
+    Escribir "El pago total al empleado es: $", total
+	
+FinAlgoritmo
+
+20. Hacer un algoritmo en Pseint que que lea 4 números enteros positivos y verifique y realice las siguientes operaciones:
+    ¿Cuántos números son Pares?
+    ¿Cuál es el mayor de todos?
+    Si el tercero es par, calcular el cuadrado del segundo.
+    Si el primero es menor que el cuarto, calcular la media de los 4 números.
+Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condición, calcular la suma de los 4 números.
+Algoritmo operaciones_enteros
+    Definir num1, num2, num3, num4 Como Entero
+    Definir parCount, mayor1 Como Entero
+    Definir cuadrado, media, suma Como Real
+	
+    // Leer 4 números enteros positivos
+    Escribir "Ingrese el primer número entero positivo:"
+    Leer num1
+    Escribir "Ingrese el segundo número entero positivo:"
+    Leer num2
+    Escribir "Ingrese el tercer número entero positivo:"
+    Leer num3
+    Escribir "Ingrese el cuarto número entero positivo:"
+    Leer num4
+	
+    // 1. ¿Cuántos números son pares?
+    parCount <- 0
+    Si num1 MOD 2 = 0 Entonces
+        parCount <- parCount + 1
+	FinSi
+	
+	Si num2 MOD 2 = 0 Entonces
+		parCount <- parCount + 1
+	FinSi
+
+	Si num3 MOD 2 = 0 Entonces
+		parCount <- parCount + 1
+	Finsi
+
+	Si num4 MOD 2 = 0 Entonces
+		parCount <- parCount + 1
+	FinSi
+
+	
+ 
+    Escribir "La cantidad de números pares es: ", parCount
+	
+    // 2. ¿Cuál es el mayor de todos?
+    mayor1 <- num1
+    Si num2 > mayor1 Entonces
+        mayor1 <- num2
+	Finsi
+
+	Si num3 > mayor1 Entonces
+		mayor1 <- num3
+	Finsi
+	
+	Si num4 > mayor1 Entonces
+		mayor1 <- num4
+	Finsi
+	
+	Escribir "El mayor número es: ", mayor1
+	
+    // 3. Si el tercero es par, calcular el cuadrado del segundo.
+    Si num3 MOD 2 = 0 Entonces
+        cuadrado <- num2 * num2
+        Escribir "El cuadrado del segundo número es: ", cuadrado
+    FinSi
+	
+    // 4. Si el primero es menor que el cuarto, calcular la media de los 4 números.
+    Si num1 < num4 Entonces
+        media <- (num1 + num2 + num3 + num4) / 4
+        Escribir "La media de los 4 números es: ", media
+    FinSi
+	
+    // 5. Si el segundo es mayor que el tercero, verificar si el tercero está comprendido entre 50 y 700.
+    //    Si se cumple, calcular la suma de los 4 números.
+    Si num2 > num3 Entonces
+        Si num3 >= 50 Y num3 <= 700 Entonces
+            suma <- num1 + num2 + num3 + num4
+            Escribir "La suma de los 4 números es: ", suma
+        FinSi
+    FinSi
+FinAlgoritmo
+21. Hacer un algoritmo en Pseint que permita calcular el factorial de un número.
+Algoritmo ContadorPara
+    Definir n, factorial, i Como Entero
+    Escribir "Ingrese un número entero: "
+    Leer n
+    
+    Si n < 0 Entonces
+        Escribir "El factorial no está definido para números negativos."
+    SiNo
+        factorial <- 1  // 'factorial' es un número entero
+        Para i <- 1 Hasta n Hacer
+            factorial <- factorial * i  // Multiplicación de enteros
+        FinPara
+        Escribir "El factorial de ", n, " es ", factorial
+    FinSi
+FinAlgoritmo
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Funcion factorial <- CalcularFactorial(n)
+    Si n = 0 Entonces
+        factorial <- 1
+    Sino
+        factorial <- n * CalcularFactorial(n - 1)
+    FinSi
+FinFuncion
+
+Algoritmo Factorial_Recursivo
+    Definir n, resultado Como Entero
+    Escribir "Ingrese un número:"
+    Leer n
+    
+    Si n < 0 Entonces
+        Escribir "El factorial no está definido para números negativos."
+    Sino
+        resultado <- CalcularFactorial(n)
+        Escribir "El factorial de ", n, " es ", resultado
+    FinSi
+FinAlgoritmo
+22. Hacer un algoritmo en Pseint para calcular la suma de los n primeros números.
+Algoritmo ContadorPara
+    Definir n, suma, i Como Entero
+    Escribir "Ingrese un número entero: "
+    Leer n
+    
+    Si n < 0 Entonces
+        Escribir "La suma no está definida para números negativos."
+    SiNo
+        suma <- 0  // Inicia el número entero
+        Para i <- 1 Hasta n Hacer
+            suma <- suma + i  // Sumar  enteros
+        FinPara
+        Escribir "El factorial de ", n, " es ", suma
+    FinSi
+FinAlgoritmo
+23. Hacer un algoritmo en Pseint para calcular la suma de los números impares menores o iguales a n.
+Algoritmo SumaImpares
+	Definir n, numero , i Como Entero
+	Escribir "Ingrese un número entero positivo"
+	Leer  n
+	Suma<- 0
+	Para i<- 1 hasta n Con Paso 2 Hacer
+		Suma<- Suma + i
+	FinPara
+	Escribir "La suma de los números enteros impares menores o iguales a ", n, " es:", suma
+FinAlgoritmo
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+Algoritmo SumaImparesMientras
+    Definir n, suma, i Como Entero
+    Escribir "Ingrese un número entero positivo: "
+    Leer n
+    suma <- 0
+    i <- 1
+    Mientras i <= n Hacer
+        suma <- suma + i
+        i <- i + 2
+    Fin Mientras
+    Escribir "La suma de los números impares menores o iguales a ", n, " es: ", suma
+FinAlgoritmo	
+
+24. Hacer un algoritmo en Pseint para realizar la suma de todos los números pares hasta el 1000.
+Algoritmo SumaParesMientras
+    Definir n, suma, i Como Entero
+    Escribir "Ingrese un número entero positivo: "
+    Leer n
+    Proceso sin_titulo
+	suma <- 0
+    i <- 2
+    Mientras i <= 1000 Hacer
+        suma <- suma + i
+        i <- i + 2
+    Fin Mientras
+    Escribir "La suma de los números pares menores o iguales a ", 1000, " es: ", suma
+FinProceso	
+
+25. Hacer un algoritmo en Pseint para calcular el factorial de un número de una forma distinta.
+
+
+26. Hacer un algoritmo en Pseint para calcular el resto y cociente por medio de restas sucesivas.
+Proceso resto_cociente 
+Definir cociente Como Entero
+	Escribir "Ingrese un valor de A:"
+	Leer A
+	Escribir "Ingrese un valor de B:"
+	Leer B
+	cociente <- 0 
+	
+	Mientras A >= B Hacer
+		A <- A- B
+		cociente <- cociente + 1
+		
+	Fin Mientras
+	Escribir "El cociente es: ", cociente
+	Escribir "el resto es: ", A
+FinProceso
+27. Hacer un algoritmo en Pseint para determinar la media de una lista indefinida de números positivos, se debe acabar el programa al ingresar un número negativo.
+
+28. Hacer un algoritmo en Pseint para calcular la suma de los primeros cien números con un ciclo repetir.
+Proceso Suma_cIEN_Numeros
+	Definir  suma, i Como Entero
+	i <- 1
+	suma <- 0
+	Repetir
+		si i <= 100 Entonces 
+			Escribir i
+			i = i + 1 // Incrementa i
+			suma= suma + i
+		FinSi
+	Hasta Que i > 100
+	Escribir "La suma de los 100 primeros numeros es: ", suma
+FinProceso
+29. Hacer un algoritmo en Pseint para calcular la suma de los primeros cien números con un ciclo mientras.
+Proceso Suma_cIEN_Numeros
+	Definir  suma, i Como Entero
+	i <- 1
+	suma <- 0
+	Mientras  i <= 100 Hacer
+			Escribir i
+			i = i + 1 // Incrementa i
+			suma= suma + i
+		FinMientras
+	Escribir "La suma de los 100 primeros numeros es: ", suma
+FinProceso
+
+30. Hacer un algoritmo en Pseint para calcular la suma de los primeros cien números con un ciclo para.
+Proceso Suma_Cien_Primeros_Numeros_Ciclo_Para
+	
+	Definir  suma, i Como Entero
+	suma <- 0
+	Para i<- 0 Hasta 300 Con Paso 2 Hacer
+		Escribir i
+		suma= suma + i
+
+	Fin Para
+	Escribir "La suma de los 100 primeros numeros es: ", suma
+FinProceso
+
+31. Hacer un algoritmo en Pseint parar calcular la media de los números pares e impares, sólo se ingresará diez números.
+Proceso Media123
+    Definir i Como Entero
+    Definir Media, Suma Como Real
+    Suma <- 0  // Se usa una variable para acumular la suma
+    Contador <- 0  // Se usa para contar los números sumados
+
+    Para i <- 0 Hasta 10 Con Paso 2 Hacer
+        Escribir i
+        Suma <- Suma + i
+        Contador <- Contador + 1  // Contamos los números sumados
+    Fin Para
+
+    Media <- Suma / Contador  // Se calcula la media al final
+
+    Escribir "La media de los números pares de 10 números ingresados es: ", Media
+FinProceso
+
+32. Se quiere saber cuál es la ciudad con la población de más personas, son tres provincias y once ciudades, hacer un algoritmo en Pseint que nos permita saber eso. (NO HAY DATOS SUFICIENTES)
+Proceso CiudadMayorPoblacion
+    Definir provincias, ciudades, i, j Como Entero
+    Definir ciudadMayor, nombreCiudad Como Cadena
+    Definir poblacionMayor, poblacionActual Como Entero
+    
+    provincias <- 3
+    ciudades <- 11
+    poblacionMayor <- 0
+    ciudadMayor <- ""
+	
+    Para i <- 1 Hasta provincias Hacer
+        Escribir "Provincia ", i, ":"
+        Para j <- 1 Hasta ciudades Hacer
+            Escribir "Ingrese el nombre de la ciudad ", j, ": "
+            Leer nombreCiudad
+            Escribir "Ingrese la población de ", nombreCiudad, ": "
+            Leer poblacionActual
+			
+            Si poblacionActual > poblacionMayor Entonces
+                poblacionMayor <- poblacionActual
+                ciudadMayor <- nombreCiudad
+            FinSi
+        Fin Para
+    Fin Para
+	
+    Escribir "La ciudad con mayor población es: ", ciudadMayor, " con ", poblacionMayor, " habitantes."
+FinProceso
+33. Hacer un algoritmo en Pseint que permita al usuario continuar con el programa.
+Proceso ContinuarPrograma
+	Definir continuar Como Caracter
+	continuar <- "S"
+	
+	Mientras continuar = "S" Hacer
+		
+		Escribir "El programa está en ejecución..."
+		
+		Escribir " ¿Desea continuar? (S/N): "
+		Leer continuar
+		continuar <- Mayusculas(continuar)
+	Fin Mientras
+	
+	Escribir "Programa finalizado."
+	
+FinProceso
+34. Hacer un algoritmo en Pseint que imprima la tabla de multiplicar de los números del uno nueve.
+Algoritmo TablasDeMultiplicar
+    Definir num, multiplicador, resultado Como Entero
+	
+    Para num <- 1 Hasta 9 Hacer  // Recorre los números del 1 al 9
+        Escribir "Tabla del ", num, ":"
+        
+        Para multiplicador <- 1 Hasta 10 Hacer  // Recorre del 1 al 10
+            resultado <- num * multiplicador
+            Escribir num, " x ", multiplicador, " = ", resultado
+        FinPara
+		
+        Escribir ""  // Salto de línea para separar las tablas
+    FinPara
+FinAlgoritmo
+35. Hacer un algoritmo en Pseint que nos permita saber cuál es el número mayor y menor, se debe ingresar sólo veinte números.
+Proceso MayorMenor
+	Definir num, mayor1, menor1 Como Entero
+	
+	Para i <- 1 Hasta 20  Hacer
+		Escribir " Ingrese el primer  ", i , ":"
+		Leer num
+		
+		Si i= 1 Entonces
+			mayor <- num
+			menor <- nim
+			
+		SiNo
+			Si num > mayor Entonces
+				mayor <- num
+			Sino  
+				Si num < menor Entonces
+					menor <- num
+				FinSi
+			Finsi
+		FinSi
+	Fin Para
+	
+	Escribir "El numero mayor es: ", mayor
+	Escribir "El numero menor es: ", menor
+FinProceso
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+Algoritmo MayorYMenor
+    Definir num, mayor, menor Como Entero
+    
+    Para i <- 1 Hasta 20 Hacer
+        Escribir "Ingrese el número ", i, ": "
+        Leer num
+        
+        Si i = 1 Entonces
+            mayor <- num
+            menor <- num
+        Sino
+            Si num > mayor Entonces
+                mayor <- num
+            FinSi
+            
+            Si num < menor Entonces
+                menor <- num
+            FinSi
+        FinSi
+    FinPara
+    
+    Escribir "El número mayor es: ", mayor
+    Escribir "El número menor es: ", menor
+FinAlgoritmo
+36. Hacer un algoritmo en Pseint para calcular la serie de Fibonacc.
+Sabemos que la serie de Fobonacc cumple:
+0,1,1,2,3,5,8,13,21,34,55
+Algoritmo SerieFibonacci
+    Definir n, a, b, siguiente Como Entero
+    
+    // Pedir al usuario la cantidad de términos de la serie
+    Escribir "Ingrese la cantidad de términos de la serie de Fibonacci: "
+    Leer n
+    
+    // Inicializar los dos primeros valores
+    a <- 0
+    b <- 1
+    
+    // Imprimir los primeros dos valores
+    Escribir Sin Saltar a, " ", b, " "
+    
+    // Generar el resto de la serie
+    Para i <- 3 Hasta n Hacer
+        siguiente <- a + b
+        Escribir Sin Saltar siguiente, " "
+        
+        // Actualizar los valores para el siguiente cálculo
+        a <- b
+        b <- siguiente
+    FinPara
+FinAlgoritmo
+37. Hacer un algoritmo en Pseint para conseguir el M.C.D de un número por medio del algoritmo de Euclides.
+Algoritmo Euclides
+    Definir a, b Como Entero
+    
+    // Pedir al usuario dos números
+    Escribir "Ingrese el primer número: "
+    Leer a
+    Escribir "Ingrese el segundo número: "
+    Leer b
+    
+    // Algoritmo de Euclides (versión con el operador módulo)
+    Mientras b <> 0 Hacer
+        resto <- a mod b
+        a <- b
+        b <- resto
+    FinMientras
+    
+    // Mostrar el resultado
+    Escribir "El Máximo Común Divisor es: ", a
+FinAlgoritmo
+38. Hacer un algoritmo en Pseint que nos permita saber si un número es un número perfecto.
+Proceso  NumeroPerfecto
+    Definir num, suma, i Como Entero
+    
+    Escribir "Ingrese un número: "
+    Leer num
+    
+    suma <- 0  // Inicializamos la suma en 0
+    
+    // Recorremos desde 1 hasta num - 1 para encontrar los divisores
+    Para i <- 1 Hasta num - 1 Hacer
+        Si num mod i = 0 Entonces
+            suma <- suma + i  // Sumamos los divisores propios
+        FinSi
+    FinPara
+    
+    // Comparamos la suma con el número original
+    Si suma = num Entonces
+        Escribir num, " es un número perfecto."
+    Sino
+        Escribir num, " NO es un número perfecto."
+    FinSi
+FinAlgoritmo
+39. Hacer un algoritmo en Pseint que cumpla con la aproximación del número pi con la serie de Gregory-Leibniz. La formula que se debe aplicar es:
+Sabemos por teoría que la aproximación:
+ 
+    Pi = (4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...
+
+Proceso  AproximacionPi
+    Definir n, i Como Entero
+	Definir PI1 Como Real
+	Escribir "Ingrese el número de términos para la aproximación de PI: "
+	Leer n
+	pi1 <- 0
+	
+	Para i <- 0  Hasta n - 1 Hacer
+		si i mod 2 = 0 Entonces
+			pi1 <- pi1+ (4/(2*i+1))
+		SiNo
+			pi1 <- pi1- (4/(2*i+1))
+		FinSi
+	Fin Para
+	Escribir "Aproximación de PI con ", n , "terminos: ", pi1
+FinAlgoritmo
+
+40. Hacer un algoritmo en Pseint que cumpla con la aproximación del número pi con la serie de Nilakantha. La formula que se debe aplicar es:
+ 
+    Pi = = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14) ...
+
+	Algoritmo Aproximacion_PI_Nilakantha
+    Definir pi, term, n Como Real
+    Definir i Como Entero
+    
+    // Inicializamos π con el primer valor de la serie
+    pi <- 3  
+    
+    // Pedimos al usuario la cantidad de términos a calcular
+    Escribir "Ingrese la cantidad de términos para la aproximación de π:"
+    Leer n
+    
+    // Iteramos desde i = 1 hasta n
+    Para i <- 1 Hasta n Hacer
+        // Calculamos el término de la serie
+        term <- 4 / ((2*i) * (2*i+1) * (2*i+2))
+        
+        // Alternamos sumas y restas según la posición de i
+        Si i mod 2 = 0 Entonces
+            pi <- pi - term  // Restamos si i es par
+        Sino
+            pi <- pi + term  // Sumamos si i es impar
+        FinSi
+    FinPara
+    
+    // Mostramos el resultado
+    Escribir "Aproximación de π con ", n, " términos: ", pi
+FinAlgoritmo
