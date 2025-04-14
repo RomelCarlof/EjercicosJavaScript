@@ -1,32 +1,21 @@
-Algoritmo NumeroPrimo_Case
-    Definir n Como Entero
+//Algoritmo Convertidor_Pulgadas_Kilogramo
+   let TotPulgadas;
+   let LibrasCant;
+   let CentimetroCant; 
+   let TotKilo;
     
-    Escribir "Ingrese un número entero positivo (1..9 o 1..10):"
-    Leer n
+   CentimetroCant= parseFloat( prompt("Ingrese una cantidad en Centímetros:"));
+   
     
-    Segun n Hacer
-        1: 
-            Escribir "No es primo"   // 1 no se considera primo
-        2:
-            Escribir "Es primo"
-        3:
-            Escribir "Es primo"
-        4:
-            Escribir "No es primo"
-        5:
-            Escribir "Es primo"
-        6:
-            Escribir "No es primo"
-        7:
-            Escribir "Es primo"
-        8:
-            Escribir "No es primo"
-        9:
-            Escribir "No es primo"
-			// Si deseas incluir el 10:
-        10:
-            Escribir "No es primo"
-        De Otro Modo:
-            Escribir "El número está fuera del rango esperado."
-    FinSegun
-FinAlgoritmo
+ LibrasCant=parseFloat( prompt("Ingrese una cantidad en Libras:"));
+
+    
+    // Calcular conversiones
+    TotPulgadas = CentimetroCant / 2.54
+    TotKilo = LibrasCant * 0.453592
+    
+    // Mostrar resultados
+    console.log( `TOTAL DE CÁLCULO EN PULGADAS:  ${TotPulgadas}`);
+    alert( `TOTAL DE CÁLCULO EN PULGADAS:  ${TotPulgadas}`);
+    console.log( `OTAL DE CÁLCULO EN KILOGRAMOS:   ${TotKilo}`);
+    alert( `OTAL DE CÁLCULO EN KILOGRAMOS: ${TotKilo}`);    //template literal (plantilla literal),
