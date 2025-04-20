@@ -28,9 +28,9 @@ if horas == 24:
 
 # Formatear con ceros a la izquierda
 
-horaFormateada = str(horas).zfillt(2)
-minutoFormateado = str(minutos).zfillt(2)
-segundoFormateado = str(segundoss).zfillt(2)
+horaFormateada = str(horas).zfill(2)
+minutoFormateado = str(minutos).zfill(2)
+segundoFormateado = str(segundoss).zfill(2)
 
 # Mostrar la hora actualizada
 
