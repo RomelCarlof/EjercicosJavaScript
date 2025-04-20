@@ -23,10 +23,10 @@ elif numero == 4:
 elif numero == 5:
 	print("Viernes")
 	
-elif numero == 2:
+elif numero == 6:
 	print("Sabado")
 	
-elif numero == 2:
+elif numero == 7:
 	print("Domingo")
 	
 else:
