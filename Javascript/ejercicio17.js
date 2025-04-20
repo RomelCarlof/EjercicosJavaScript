@@ -21,16 +21,16 @@ if (segundoss = 60) {
     minutos = minutos + 1;
 }
 //Si los  minutos llegan a 60, reiniciar y sumar una hora
-if (minutos = 60) {
+if (minutos ===60) {
     minutos = 0;
     horas = horas + 1;
 }
 //Si las horas llegan a 24, reiniciar el día
-if (horas = 24) {
+if (horas === 24) {
     horas = 0;
 }
 
-//Mostrar la hora actualizada
-	
-	console.log("La hora dentro de un segundo es: "+ horas+ ":" +minutos+ ":" +segundoss);
-    alert("La hora dentro de un segundo es: "+ horas+ ":" +minutos+ ":" +segundoss);
+// Mostrar la hora actualizada
+
+console.log("La hora dentro de un segundo es: " + horas + ":" + minutos + ":" + segundoss);
+alert("La hora dentro de un segundo es: " + horas + ":" + minutos + ":" + segundoss);
