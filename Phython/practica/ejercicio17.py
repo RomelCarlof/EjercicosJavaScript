@@ -34,4 +34,5 @@ segundoFormateado = str(segundoss).zfillt(2)
 
 # Mostrar la hora actualizada
 
-print("La hora dentro de un segundo es: " + horas + ":" + minutos + ":" + segundoss)
+# Mostrar la hora actualizada
+print("La hora dentro de un segundo es: " + horaFormateada + ":" + minutoFormateado + ":" + segundoFormateado)
