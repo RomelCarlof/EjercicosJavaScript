@@ -30,6 +30,12 @@ if (horas === 24) {
     horas = 0;
 }
 
+
+// Formatear con ceros a la izquierda
+let horaFormateada = String(horas).padStart(2, '0');
+let minutoFormateado = String(minutos).padStart(2, '0');
+let segundoFormateado = String(segundos).padStart(2, '0');
+
 // Mostrar la hora actualizada
 
 console.log("La hora dentro de un segundo es: " + horas + ":" + minutos + ":" + segundoss);
