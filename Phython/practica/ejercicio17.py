@@ -28,9 +28,9 @@ if horas == 24:
 
 # Formatear con ceros a la izquierda
 
-horaFormateada = String(horas).padStart(2, '0')
-minutoFormateado = String(minutos).padStart(2, '0')
-segundoFormateado = String(segundoss).padStart(2, '0')
+horaFormateada = str(horas).zfillt(2)
+minutoFormateado = str(minutos).zfillt(2)
+segundoFormateado = str(segundoss).zfillt(2)
 
 # Mostrar la hora actualizada
 
