@@ -42,7 +42,7 @@ if salario == 0:
 total = salario * dias
 
 # Mostrar el resultado
-print("El pago total al empleado es: $" + total)
+print(f"El pago total al empleado es: ${total}")
 
 
 #Fin del algoritmo
