@@ -2,9 +2,6 @@
 let n;
 let factorial;
 
-
-n = prompt("Ingrese un número entero: ");
-
 n = prompt("Ingrese un número entero: ");
 n = parseInt(n); // Lo conviertes a número
 
