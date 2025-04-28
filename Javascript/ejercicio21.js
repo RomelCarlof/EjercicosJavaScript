@@ -1,12 +1,17 @@
 //Algoritmo ContadorPara
 let n;
 let factorial;
-let i;
-
-n = parseInt(prompt("Ingrese un número entero: "));
 
 
-if (n < 0) {
+n = prompt("Ingrese un número entero: ");
+
+n = prompt("Ingrese un número entero: ");
+n = parseInt(n); // Lo conviertes a número
+
+if (isNaN(n)) {
+    alert("¡No ingresaste un número válido!");
+
+}else if (n < 0) {
     console.log("El factorial no está definido para números negativos.");
     alert("El factorial no está definido para números negativos.");
 } else {
