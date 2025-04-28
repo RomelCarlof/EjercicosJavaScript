@@ -17,6 +17,6 @@ if (isNaN(n)) {
         factorial = factorial * i ; // Multiplicación de enteros
     }//FinPara
     console.log("El factorial de ", n, " es ", factorial);
-    alert("El factorial de ", + n + " es " +factorial);
+    alert("El factorial de " + n + " es " +factorial);
 }
 //FinAlgoritmoS
