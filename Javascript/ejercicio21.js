@@ -12,9 +12,9 @@ if (n < 0) {
 } else {
     factorial = 1;  // 'factorial' es un número entero
     for (let i = 1; i <= n; i++) {
-        factorial = factorial * i  // Multiplicación de enteros
+        factorial = factorial * i ; // Multiplicación de enteros
     }//FinPara
     console.log("El factorial de ", n, " es ", factorial);
-    alert("El factorial de ", n, " es ", factorial);
+    alert("El factorial de ", + n + " es " +factorial);
 }
-//FinAlgoritmo
+//FinAlgoritmoS
