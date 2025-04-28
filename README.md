@@ -48,3 +48,19 @@ git checkout -b main backendFullstack/main
 # Si necesitas actualizar los cambios desde el remoto, usa:
 
 git pull backendFullstack main
+
+
+
+
+
+
+
+//¿Qué debes hacer?
+✅ Si el código lo escribiste tú o confías en la fuente (por ejemplo, en este caso que lo hicimos juntos), puedes:
+
+Escribir en la consola.
+allow pasting 
+
+Presionar Enter.
+
+Luego pegar tu código.
