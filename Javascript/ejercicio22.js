@@ -17,6 +17,6 @@ if (isNaN(n)) {
         suma = suma + i  // Sumar  enteros
     }//FinPara
     console.log("El factorial de ", n, " es ", suma);
-    alert("El factorial de" + n + "es ", +suma);
+    alert("El factorial de" + n + "es " + suma);
 }//FinSi
 //FinAlgoritmo
