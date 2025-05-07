@@ -14,7 +14,7 @@ if (isNaN(n)) {
 } else {
     suma = 0;  // Inicia el número entero
     for (let i = 1; i <= n; i++) {
-        suma = suma + i  // Sumar  enteros
+        suma = suma + i;  // Sumar  enteros
     }//FinPara
     console.log("El factorial de ", n, " es ", suma);
     alert("El factorial de" + n + "es " + suma);
