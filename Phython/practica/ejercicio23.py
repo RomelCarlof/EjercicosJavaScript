@@ -1,11 +1,11 @@
 
 
-entrada = input("Ingrese un número entero positivo")
+entrada = input("Ingrese un número entero positivo: ")
 
 try:
 
     n = int(entrada)
-    print("¡No ingresaste un número válido!")
+ 
 
     if n <= 0:
         print("¡No ingresaste un número positivo!")
