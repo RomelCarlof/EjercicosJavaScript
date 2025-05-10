@@ -1,8 +1,7 @@
-#Algoritmo SumaParesMientras
-#let n;
-#let suma;
-#let i;
-entrada = input("Ingrese un número entero positivo: ")
+# Algoritmo SumaParesMientras
+# let suma;
+# let i;
+
 suma = 0
 i = 2
 
