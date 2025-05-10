@@ -7,17 +7,12 @@ suma = 0
 i = 2
 
 try:
-    n= int(entrada)
+    # Se establece el límite como 1000
+    while i <= 1000:
+        suma = suma + i
+        i = i + 2
 
-    if n<=0:
-        print("¡No ingresaste un número válido!")
-    
-    else:
+    print("La suma de los números pares menores o iguales a 1000 es:", suma)
 
-        while (i <= 1000):
-            suma =suma + i
-            i = i + 2
-            print("La suma de los números pares menores o iguales a ", 1000, " es: ", suma)
-     
 except ValueError:
-        print("¡No ingresaste un número válido!")
+    print("¡No ingresaste un número válido!")
