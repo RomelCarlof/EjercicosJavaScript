@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Algoritmo de Inserción - Ordenamiento</title>
+  <title>Ejemplo Práctico Complejidad Algoritmo de Inserción</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
@@ -12,59 +12,81 @@
   </style>
 </head>
 <body class="bg-white text-gray-700 p-6">
-  <div class="max-w-3xl mx-auto">
+  <div class="max-w-4xl mx-auto">
     <h1 class="text-2xl font-extrabold text-[#d96a00] mb-6">
-      Algoritmo de Inserción para Ordenamiento
+      Ejemplo Práctico: Complejidad del Algoritmo de Inserción
     </h1>
 
-    <div class="mb-4">
-      <label for="inputArray" class="block font-semibold mb-2">Ingresa números separados por comas:</label>
-      <input
-        id="inputArray"
-        type="text"
-        placeholder="Ejemplo: 8,7,5,9,1,6,2,4,3"
-        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#d96a00]"
-        value="8,7,5,9,1,6,2,4,3"
-      />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Entrada para lista -->
+      <div>
+        <label for="inputArray" class="block font-semibold mb-2">
+          Ingresa números separados por comas:
+        </label>
+        <input
+          id="inputArray"
+          type="text"
+          placeholder="Ejemplo: 8,7,5,9,1,6,2,4,3"
+          class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#d96a00]"
+          value="8,7,5,9,1,6,2,4,3"
+        />
+        <button
+          id="sortBtn"
+          class="mt-4 bg-[#d96a00] text-white font-semibold px-4 py-2 rounded hover:bg-[#b35a00] transition"
+        >
+          Ordenar con Inserción
+        </button>
+      </div>
+
+      <!-- Resultados -->
+      <div>
+        <h2 class="text-xl font-bold text-[#c75a00] mb-2">Pasos del algoritmo:</h2>
+        <div
+          id="stepsContainer"
+          class="border border-gray-300 rounded p-4 max-h-96 overflow-y-auto font-mono text-sm bg-gray-50 mb-6"
+        ></div>
+
+        <h2 class="text-xl font-bold text-[#c75a00] mb-2">Contador de Comparaciones y Movimientos:</h2>
+        <div
+          id="counters"
+          class="border border-gray-300 rounded p-4 font-mono text-sm bg-gray-50"
+        >
+          <p><strong>Comparaciones:</strong> <span id="compCount">0</span></p>
+          <p><strong>Movimientos:</strong> <span id="moveCount">0</span></p>
+        </div>
+      </div>
     </div>
-
-    <button
-      id="sortBtn"
-      class="bg-[#d96a00] text-white font-semibold px-4 py-2 rounded hover:bg-[#b35a00] transition"
-    >
-      Ordenar con Inserción
-    </button>
-
-    <h2 class="mt-8 text-xl font-bold text-[#c75a00]">Pasos del algoritmo:</h2>
-    <div
-      id="stepsContainer"
-      class="mt-4 border border-gray-300 rounded p-4 max-h-96 overflow-y-auto font-mono text-sm bg-gray-50"
-    ></div>
   </div>
 
   <script>
-    function insertionSortSteps(arr) {
+    function insertionSortWithCounts(arr) {
       const steps = [];
-      const array = arr.slice(); // copia para no modificar original
+      const array = arr.slice();
+      let comparisons = 0;
+      let movements = 0;
 
-      // Guardar estado inicial
       steps.push(array.slice());
 
       for (let i = 1; i < array.length; i++) {
         let key = array[i];
         let j = i - 1;
 
-        // Mover elementos mayores que key a la derecha
         while (j >= 0 && array[j] > key) {
+          comparisons++;
           array[j + 1] = array[j];
+          movements++;
           j--;
         }
-        array[j + 1] = key;
+        // Si el while no se ejecutó, igual se hizo una comparación para salir
+        if (j >= 0) comparisons++;
 
-        // Guardar estado después de cada inserción
+        array[j + 1] = key;
+        movements++;
+
         steps.push(array.slice());
       }
-      return steps;
+
+      return { steps, comparisons, movements };
     }
 
     function renderSteps(steps) {
@@ -75,8 +97,6 @@
         const stepDiv = document.createElement("div");
         stepDiv.className = "mb-2";
 
-        // Resaltar la parte ordenada con fondo morado
-        // La parte ordenada es desde índice 0 hasta index
         const stepHtml = step
           .map((num, i) => {
             if (i <= index) {
@@ -92,6 +112,11 @@
       });
     }
 
+    function updateCounters(comparisons, movements) {
+      document.getElementById("compCount").textContent = comparisons;
+      document.getElementById("moveCount").textContent = movements;
+    }
+
     document.getElementById("sortBtn").addEventListener("click", () => {
       const input = document.getElementById("inputArray").value;
       const arr = input
@@ -105,15 +130,16 @@
         return;
       }
 
-      const steps = insertionSortSteps(arr);
+      const { steps, comparisons, movements } = insertionSortWithCounts(arr);
       renderSteps(steps);
+      updateCounters(comparisons, movements);
     });
 
-    // Mostrar pasos iniciales con valor por defecto
     window.onload = () => {
       const defaultArr = [8, 7, 5, 9, 1, 6, 2, 4, 3];
-      const steps = insertionSortSteps(defaultArr);
+      const { steps, comparisons, movements } = insertionSortWithCounts(defaultArr);
       renderSteps(steps);
+      updateCounters(comparisons, movements);
     };
   </script>
 </body>
