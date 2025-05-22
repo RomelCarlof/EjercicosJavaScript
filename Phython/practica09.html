@@ -1,0 +1,120 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Algoritmo de Inserción - Ordenamiento</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-700 p-6">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-2xl font-extrabold text-[#d96a00] mb-6">
+      Algoritmo de Inserción para Ordenamiento
+    </h1>
+
+    <div class="mb-4">
+      <label for="inputArray" class="block font-semibold mb-2">Ingresa números separados por comas:</label>
+      <input
+        id="inputArray"
+        type="text"
+        placeholder="Ejemplo: 8,7,5,9,1,6,2,4,3"
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#d96a00]"
+        value="8,7,5,9,1,6,2,4,3"
+      />
+    </div>
+
+    <button
+      id="sortBtn"
+      class="bg-[#d96a00] text-white font-semibold px-4 py-2 rounded hover:bg-[#b35a00] transition"
+    >
+      Ordenar con Inserción
+    </button>
+
+    <h2 class="mt-8 text-xl font-bold text-[#c75a00]">Pasos del algoritmo:</h2>
+    <div
+      id="stepsContainer"
+      class="mt-4 border border-gray-300 rounded p-4 max-h-96 overflow-y-auto font-mono text-sm bg-gray-50"
+    ></div>
+  </div>
+
+  <script>
+    function insertionSortSteps(arr) {
+      const steps = [];
+      const array = arr.slice(); // copia para no modificar original
+
+      // Guardar estado inicial
+      steps.push(array.slice());
+
+      for (let i = 1; i < array.length; i++) {
+        let key = array[i];
+        let j = i - 1;
+
+        // Mover elementos mayores que key a la derecha
+        while (j >= 0 && array[j] > key) {
+          array[j + 1] = array[j];
+          j--;
+        }
+        array[j + 1] = key;
+
+        // Guardar estado después de cada inserción
+        steps.push(array.slice());
+      }
+      return steps;
+    }
+
+    function renderSteps(steps) {
+      const container = document.getElementById("stepsContainer");
+      container.innerHTML = "";
+
+      steps.forEach((step, index) => {
+        const stepDiv = document.createElement("div");
+        stepDiv.className = "mb-2";
+
+        // Resaltar la parte ordenada con fondo morado
+        // La parte ordenada es desde índice 0 hasta index
+        const stepHtml = step
+          .map((num, i) => {
+            if (i <= index) {
+              return `<span class="inline-block bg-[#d026d0] text-white px-1 rounded">${num}</span>`;
+            } else {
+              return `<span class="inline-block px-1">${num}</span>`;
+            }
+          })
+          .join(" ");
+
+        stepDiv.innerHTML = `<strong>Iteración ${index}:</strong> ${stepHtml}`;
+        container.appendChild(stepDiv);
+      });
+    }
+
+    document.getElementById("sortBtn").addEventListener("click", () => {
+      const input = document.getElementById("inputArray").value;
+      const arr = input
+        .split(",")
+        .map((x) => x.trim())
+        .filter((x) => x !== "")
+        .map(Number);
+
+      if (arr.some(isNaN)) {
+        alert("Por favor, ingresa solo números separados por comas.");
+        return;
+      }
+
+      const steps = insertionSortSteps(arr);
+      renderSteps(steps);
+    });
+
+    // Mostrar pasos iniciales con valor por defecto
+    window.onload = () => {
+      const defaultArr = [8, 7, 5, 9, 1, 6, 2, 4, 3];
+      const steps = insertionSortSteps(defaultArr);
+      renderSteps(steps);
+    };
+  </script>
+</body>
+</html>
