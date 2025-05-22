@@ -11,3 +11,8 @@ curl -o python-installer.exe https://www.python.org/ftp/python/3.12.1/python-3.1
 # 2. segndo paso 
 
 ./python-installer.exe
+
+
+
+#  matplotlib
+python -m pip install numpy matplotlib
