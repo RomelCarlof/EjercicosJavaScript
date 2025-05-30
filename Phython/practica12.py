@@ -1,18 +1,22 @@
-def merge_sort(arr):
+def merge_sort_visual(arr, depth=0):
+    indent = "  " * depth  # Sangría para visualizar niveles
+
     if len(arr) > 1:
-        # Dividir el arreglo en dos mitades
         mid = len(arr) // 2
         left_half = arr[:mid]
         right_half = arr[mid:]
 
-        # Llamadas recursivas para cada mitad
-        merge_sort(left_half)
-        merge_sort(right_half)
+        print(f"{indent}Dividir: {arr} → {left_half} | {right_half}")
 
-        # Inicializamos índices
+        # Llamadas recursivas
+        merge_sort_visual(left_half, depth + 1)
+        merge_sort_visual(right_half, depth + 1)
+
+        # Fusión
         i = j = k = 0
 
-        # Combinar las mitades ordenadamente
+        print(f"{indent}Combinar: {left_half} + {right_half}")
+
         while i < len(left_half) and j < len(right_half):
             if left_half[i] < right_half[j]:
                 arr[k] = left_half[i]
@@ -22,23 +26,25 @@ def merge_sort(arr):
                 j += 1
             k += 1
 
-        # Añadir los elementos restantes de left_half (si hay)
         while i < len(left_half):
             arr[k] = left_half[i]
             i += 1
             k += 1
 
-        # Añadir los elementos restantes de right_half (si hay)
         while j < len(right_half):
             arr[k] = right_half[j]
             j += 1
             k += 1
 
-# Lista original
+        print(f"{indent}Resultado: {arr}")
+    else:
+        print(f"{indent}Base: {arr}")
+
+# Lista de entrada
 numeros = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 
-# Ejecutamos el algoritmo
-merge_sort(numeros)
-
-# Mostramos el resultado
-print("Lista ordenada:", numeros)
+# Ejecutar con visualización
+print("=== Proceso de Merge Sort ===")
+merge_sort_visual(numeros)
+print("\n=== Lista final ordenada ===")
+print(numeros)
