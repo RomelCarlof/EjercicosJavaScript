@@ -1,28 +1,42 @@
-def hanoi_restringido(n, origen, pivote, destino, movimientos):
-    if n == 0:
-        return
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
 
-    # Paso 1: mover n discos de origen a destino, usando pivote como pivote (al revés)
-    hanoi_restringido(n - 1, origen, pivote, destino, movimientos)
+# Colores para los discos
+colores = {
+    1: "red",
+    2: "orange",
+    3: "yellow",
+    4: "green",
+    5: "blue"
+}
 
-    # Paso 2: mover disco n de origen a pivote
-    movimientos.append((origen, pivote))
+# Configuración inicial de las torres (de mayor a menor)
+torres = {
+    "Torre 1": [5, 4, 3, 2, 1],
+    "Torre 2": [],
+    "Torre 3": []
+}
 
-    # Paso 3: mover n - 1 discos de destino a origen, usando pivote como pivote
-    hanoi_restringido(n - 1, destino, pivote, origen, movimientos)
+# Posiciones de las torres en el gráfico
+posiciones = {"Torre 1": 1.5, "Torre 2": 4.5, "Torre 3": 7.5}
 
-    # Paso 4: mover disco n de pivote a destino
-    movimientos.append((pivote, destino))
+# Crear la imagen de referencia basada en el estilo proporcionado
+fig, ax = plt.subplots(figsize=(10, 5))
+ax.set_xlim(0, 9)
+ax.set_ylim(0, 6)
+ax.axis('off')
 
-    # Paso 5: mover n - 1 discos de origen a destino, usando pivote como pivote
-    hanoi_restringido(n - 1, origen, pivote, destino, movimientos)
+# Dibujar bases negras de cada torre
+for x in posiciones.values():
+    ax.add_patch(patches.Rectangle((x - 1, 0), 2, 0.3, color="black"))  # Base
+    ax.add_patch(patches.Rectangle((x - 0.05, 0.3), 0.1, 4.7, color="black"))  # Poste
 
-# Llamada al algoritmo
-movimientos = []
-hanoi_restringido(4, "Torre 1", "Torre 2", "Torre 3", movimientos)
+# Dibujar los discos en la Torre 1
+base_x = posiciones["Torre 1"]
+for j, disco in enumerate(torres["Torre 1"]):
+    ancho = disco * 0.3
+    color = colores.get(disco, "gray")
+    ax.add_patch(patches.Rectangle((base_x - ancho/2, 0.3 + j * 0.4), ancho, 0.3, color=color))
 
-# Mostrar los movimientos
-for i, (origen, destino) in enumerate(movimientos, 1):
-    print(f"{i}. Mover disco de {origen} a {destino}")
-
-print(f"\nTotal de movimientos: {len(movimientos)}")
+plt.title("Estado inicial: Todos los discos en Torre 1")
+plt.show()
