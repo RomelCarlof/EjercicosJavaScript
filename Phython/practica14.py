@@ -1,3 +1,5 @@
+#TECNICA VORAZ
+
 def cambio_voraz(cantidad, monedas):
     resultado = []
     for moneda in monedas:
