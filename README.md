@@ -48,6 +48,7 @@ git checkout -b main backendFullstack/main
 # Si necesitas actualizar los cambios desde el remoto, usa:
 
 git pull backendFullstack main
+git pull origin main
 
 
 
