@@ -7,7 +7,7 @@ def Obtener_Cuadrados(numeros):
         Resultado.append(numero ** 2)
     return Resultado
 
-    print(Obtener_Cuadrados([1,2,3,4,5,6,7,8,9]))
+print(Obtener_Cuadrados([1,2,3,4,5,6,7,8,9]))
 
 
 
