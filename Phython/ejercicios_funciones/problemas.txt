@@ -1,0 +1,23 @@
+1. Escribe una función que reciba como entrada una lista con números y devuelva como resultado una lista con los cuadrados de los números contenidos en la lista de entrada.
+
+2. Escribe una función que reciba números como entrada y devuelva la suma de los mismos. La función debe ser capaz de recibir una cantidad indeterminada de números. La función
+ no debe recibir directamente ningún objeto complejo (lista, conjunto, etc.).
+
+3. Escribe una función que reciba un string como entrada y devuelva el string al revés. Ejemplo: si el string de entrada es 'hola', el resultado será 'aloh'.
+
+4. Escribe una función lambda que, al igual que la función desarrollada en el ejercicio anterior, invierta el string recibido como parámetro. Ejemplo: si el string de entrada es
+ 'hola', el resultado será 'aloh'.
+
+5. Escribe una función que compruebe si un número se encuentra dentro de un rango específico.
+
+6. Escribe una función que reciba un número entero positivo como parámetro y devuelva una lista que contenga los 5 primeros múltiplos de dicho número. Por ejemplo, si la función 
+recibe el número 3, devolverá la lista [3, 6, 9, 12, 15]. Si la función recibe un parámetro incorrecto (por ejemplo, un múmero menor o igual a cero), mostrará un mensaje de
+ error por pantalla y devolverá una lista vacía.
+
+7. Escribe una función que reciba una lista como parámetro y compruebe si la lista tiene duplicados. La función devolverá True si la lista tiene duplicados y False si no los tiene.
+
+8. Escribe una función lambda que, al igual que la función desarrollada en el ejercicio anterior, reciba una lista como parámetro y compruebe si la lista tiene duplicados. 
+La función devolverá True si la lista tiene duplicados y False si no los tiene.
+
+9. Escribe una función que compruebe si un string dado es un palíndromo. Un palíndromo es una secuencia de caracteres que se lee igual de izquierda a derecha que de derecha a 
+izquierda. Por ejemplo, la función devolverá True si recibe el string "reconocer" y False si recibe el string "python".
