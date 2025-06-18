@@ -56,6 +56,9 @@ git pull origin main
 pip3 install deep-translator PyPDF2 reportlab
 
 
+# Añade el archivo modificado al área de preparación:
+git add ../README.md
+
 
 
 
