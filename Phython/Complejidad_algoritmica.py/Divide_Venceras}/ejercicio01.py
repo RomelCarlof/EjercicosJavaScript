@@ -22,7 +22,7 @@ def contar_pares(arr, k):
     return conteo_cruzado + conteo_izquierda + conteo_derecha
 
 
-arr = [1, 5, 3, 7, 2, 4]
+arr = [1, 5, 3, 7, 2, 4, 0, 6]
 k = 6
 total = contar_pares(arr, k)
 print(f"Total de pares que suman {k}: {total}")
