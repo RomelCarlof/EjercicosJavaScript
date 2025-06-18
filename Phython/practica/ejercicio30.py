@@ -1,10 +1,10 @@
-#Proceso Suma_Cien_Primeros_Numeros_Ciclo_Para
+#Proceso Suma_Cien_Primeros_Numeros_Ciclo_Para pares
 
 #suma;
 # i;
 suma = 0
 
-for i in range (0, 301, 2):
+for i in range (0, 101, 2):
 
 	print(f"Escribir: {i}")
 	suma += i
