@@ -52,6 +52,11 @@ git pull origin main
 
 
 
+# instaladas las librerías necesarias en tu entorno de Python. (ejercicio 11)
+pip3 install deep-translator PyPDF2 reportlab
+
+
+
 
 
 
