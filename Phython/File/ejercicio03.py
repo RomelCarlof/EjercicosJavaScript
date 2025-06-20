@@ -16,4 +16,5 @@ def obtener_frecuencias(ruta_fichero):
                 anyadir_palabra(frecuencias, palabra)
     return frecuencias
 
-obtener_frecuencias('res/Ejercicio3.txt')
+# Mostrar el resultado
+print(obtener_frecuencias('res/Ejercicio3.txt'))
