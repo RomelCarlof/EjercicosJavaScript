@@ -10,7 +10,7 @@ def anyadir_palabra(frecuencias, palabra):
 
 def obtener_frecuencias(ruta_fichero):
     frecuencias = {}
-    with open(ruta_fichero) as fichero:
+    with open(ruta_fichero, encoding='utf-8') as fichero:
         for linea in fichero:
             for palabra in linea.split():
                 anyadir_palabra(frecuencias, palabra)
