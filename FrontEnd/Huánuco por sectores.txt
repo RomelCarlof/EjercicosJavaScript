@@ -775,3 +775,447 @@ Lng: -76.248668
 
 Lat: -9.916784
 Lng: -76.248722
+
+
+HUANUCO
+
+Lat: -9.942559
+Lng: -76.250010
+
+Lat: -9.942855
+Lng: -76.250954
+
+Lat: -9.942644
+Lng: -76.252627
+
+Coordenadas:
+Lat: -9.942771
+Lng: -76.254344
+
+Coordenadas:
+Lat: -9.943912
+Lng: -76.256490
+
+Lat: -9.942855
+Lng: -76.250954
+
+Coordenadas:
+Lat: -9.947124
+Lng: -76.258893
+
+Coordenadas:
+Lat: -9.949872
+Lng: -76.259193
+
+Coordenadas:
+Lat: -9.952281
+Lng: -76.260395
+
+
+Coordenadas:
+Lat: -9.954564
+Lng: -76.262541
+
+Coordenadas:
+Lat: -9.957269
+Lng: -76.264987
+
+Coordenadas:
+Lat: -9.959340
+Lng: -76.268721
+
+Coordenadas:
+Lat: -9.961158
+Lng: -76.273184
+
+Coordenadas:
+Lat: -9.960693
+Lng: -76.276188
+
+Coordenadas:
+Lat: -9.961454
+Lng: -76.278634
+
+Coordenadas:
+Lat: -9.961496
+Lng: -76.283398
+
+Coordenadas:
+Lat: -9.960904
+Lng: -76.286316
+
+Coordenadas:
+Lat: -9.959171
+Lng: -76.288762
+
+Coordenadas:
+Lat: -9.957607
+Lng: -76.289363
+
+Coordenadas:
+Lat: -9.955113
+Lng: -76.291380
+
+Coordenadas:
+Lat: -9.953507
+Lng: -76.294942
+
+Coordenadas:
+Lat: -9.952239
+Lng: -76.297603
+
+Coordenadas:
+Lat: -9.952789
+Lng: -76.299834
+
+Coordenadas:
+Lat: -9.953634
+Lng: -76.302152
+
+Coordenadas:
+Lat: -9.956466
+Lng: -76.307173
+
+Coordenadas:
+Lat: -9.959087
+Lng: -76.312065
+
+Coordenadas:
+Lat: -9.959932
+Lng: -76.320305
+
+Coordenadas:
+Lat: -9.958601
+Lng: -76.320852
+
+Coordenadas:
+Lat: -9.957480
+Lng: -76.320305
+
+Coordenadas:
+Lat: -9.955917
+Lng: -76.319232
+
+Coordenadas:
+Lat: -9.951996
+Lng: -76.319253
+
+Coordenadas:
+Lat: -9.950210
+Lng: -76.319447
+
+Coordenadas:
+Lat: -9.946659
+Lng: -76.317172
+
+Coordenadas:
+Lat: -9.943658
+Lng: -76.317590
+
+Coordenadas:
+Lat: -9.940942
+Lng: -76.320155
+
+Coordenadas:
+Lat: -9.937909
+Lng: -76.321936
+
+Coordenadas:
+Lat: -9.934464
+Lng: -76.323309
+
+Coordenadas:
+Lat: -9.929804
+Lng: -76.324285
+
+Coordenadas:
+Lat: -9.923590
+Lng: -76.325144
+
+Coordenadas:
+Lat: -9.922438
+Lng: -76.326882
+
+Coordenadas:
+Lat: -9.920609
+Lng: -76.329499
+
+Coordenadas:
+Lat: -9.918464
+Lng: -76.332225
+
+Coordenadas:
+Lat: -9.916329
+Lng: -76.334424
+
+Coordenadas:
+Lat: -9.914036
+Lng: -76.336462
+
+Coordenadas:
+Lat: -9.913676
+Lng: -76.338973
+
+Coordenadas:
+Lat: -9.912884
+Lng: -76.340904
+
+Coordenadas:
+Lat: -9.909639
+Lng: -76.342160
+
+Coordenadas:
+Lat: -9.906342
+Lng: -76.341698
+
+Coordenadas:
+Lat: -9.904957
+Lng: -76.341548
+
+Coordenadas:
+Lat: -9.903287
+Lng: -76.340990
+
+Coordenadas:
+Lat: -9.901300
+Lng: -76.341065
+
+Coordenadas:
+Lat: -9.895234
+Lng: -76.340443
+
+Coordenadas:
+Lat: -9.885066
+Lng: -76.341419
+
+Coordenadas:
+Lat: -9.875173
+Lng: -76.343479
+
+Coordenadas:
+Lat: -9.875595
+Lng: -76.339102
+
+Coordenadas:
+Lat: -9.875680
+Lng: -76.333866
+
+Coordenadas:
+Lat: -9.878132
+Lng: -76.328802
+
+Coordenadas:
+Lat: -9.876103
+Lng: -76.326141
+
+Coordenadas:
+Lat: -9.876187
+Lng: -76.322880
+
+Coordenadas:
+Lat: -9.880077
+Lng: -76.319017
+
+Coordenadas:
+Lat: -9.882275
+Lng: -76.312838
+
+Coordenadas:
+Lat: -9.882191
+Lng: -76.307001
+
+Coordenadas:
+Lat: -9.882191
+Lng: -76.307001
+
+Coordenadas:
+Lat: -9.883713
+Lng: -76.300735
+
+Coordenadas:
+Lat: -9.880077
+Lng: -76.294384
+
+Coordenadas:
+Lat: -9.882741
+Lng: -76.289577
+
+Coordenadas:
+Lat: -9.884389
+Lng: -76.286917
+
+Coordenadas:
+Lat: -9.883544
+Lng: -76.283398
+
+Coordenadas:
+Lat: -9.883882
+Lng: -76.278505
+
+Coordenadas:
+Lat: -9.880373
+Lng: -76.272969
+
+Coordenadas:
+Lat: -9.878048
+Lng: -76.268721
+
+Coordenadas:
+Lat: -9.877794
+Lng: -76.262712
+
+Coordenadas:
+Lat: -9.878048
+Lng: -76.258507
+
+Coordenadas:
+Lat: -9.876652
+Lng: -76.254687
+
+Coordenadas:
+Lat: -9.875426
+Lng: -76.252670
+
+Coordenadas:
+Lat: -9.874834
+Lng: -76.242800
+
+Coordenadas:
+Lat: -9.873735
+Lng: -76.232500
+
+Coordenadas:
+Lat: -9.872213
+Lng: -76.225119
+
+Coordenadas:
+Lat: -9.871452
+Lng: -76.220999
+
+Coordenadas:
+Lat: -9.870691
+Lng: -76.214819
+
+Coordenadas:
+Lat: -9.870945
+Lng: -76.212330
+
+Coordenadas:
+Lat: -9.868915
+Lng: -76.209326
+
+Coordenadas:
+Lat: -9.868408
+Lng: -76.204691
+
+Coordenadas:
+Lat: -9.867309
+Lng: -76.201172
+
+Coordenadas:
+Lat: -9.867224
+Lng: -76.197653
+
+Coordenadas:
+Lat: -9.863842
+Lng: -76.190100
+
+Coordenadas:
+Lat: -9.861220
+Lng: -76.181774
+
+Coordenadas:
+Lat: -9.864772
+Lng: -76.180744
+
+Coordenadas:
+Lat: -9.867731
+Lng: -76.180916
+
+Coordenadas:
+Lat: -9.872128
+Lng: -76.181431
+
+Coordenadas:
+Lat: -9.873820
+Lng: -76.182804
+
+Coordenadas:
+Lat: -9.875003
+Lng: -76.187782
+
+Coordenadas:
+Lat: -9.876526
+Lng: -76.191902
+
+Coordenadas:
+Lat: -9.877540
+Lng: -76.194305
+
+Coordenadas:
+Lat: -9.880246
+Lng: -76.196880
+
+Coordenadas:
+Lat: -9.883967
+Lng: -76.199026
+
+Coordenadas:
+Lat: -9.885573
+Lng: -76.201944
+
+Coordenadas:
+Lat: -9.885658
+Lng: -76.206408
+
+Coordenadas:
+Lat: -9.886672
+Lng: -76.209068
+
+Coordenadas:
+Lat: -9.886672
+Lng: -76.212845
+
+Coordenadas:
+Lat: -9.887603
+Lng: -76.216621
+
+Coordenadas:
+Lat: -9.888448
+Lng: -76.220827
+
+Coordenadas:
+Lat: -9.890900
+Lng: -76.223488
+
+Coordenadas:
+Lat: -9.892169
+Lng: -76.225119
+
+Coordenadas:
+Lat: -9.893183
+Lng: -76.227608
+
+Coordenadas:
+Lat: -9.897665
+Lng: -76.227608
+
+Coordenadas:
+Lat: -9.900793
+Lng: -76.227350
+
+Coordenadas:
+Lat: -9.903245
+Lng: -76.229839
+
+Coordenadas:
+Lat: -9.904767
+Lng: -76.231556
+
+Coordenadas:
+Lat: -9.904767
+Lng: -76.231556
+
+Coordenadas:
+Lat: -9.906289
+Lng: -76.234131
