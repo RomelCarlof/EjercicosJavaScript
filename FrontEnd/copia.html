@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Infraestructura Pública - Huánuco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    html, body, #map { height: 100%; margin: 0; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map("map").setView([-9.9306, -76.2422], 14);
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      maxZoom: 19,
+      attribution: "© OpenStreetMap & Carto"
+    }).addTo(map);
+
+    function icon(url) {
+      return L.icon({ iconUrl: url, iconSize: [28, 28], iconAnchor: [14, 28] });
+    }
+
+    const icons = {
+      iglesiaCatolica: icon("https://cdn-icons-png.flaticon.com/512/3534/3534066.png"),
+      iglesiaNoCatolica: icon("https://cdn-icons-png.flaticon.com/512/1995/1995473.png"),
+      parque: icon("https://cdn-icons-png.flaticon.com/512/684/684908.png"),
+      hospital: icon("https://cdn-icons-png.flaticon.com/512/2967/2967350.png"),
+      centroSalud: icon("https://cdn-icons-png.flaticon.com/512/3176/3176291.png"),
+      puestoSalud: icon("https://cdn-icons-png.flaticon.com/512/3050/3050525.png"),
+      cei: icon("https://cdn-icons-png.flaticon.com/512/1670/1670047.png"),
+      primaria: icon("https://cdn-icons-png.flaticon.com/512/3281/3281307.png"),
+      secundaria: icon("https://cdn-icons-png.flaticon.com/512/201/201614.png"),
+      universidad: icon("https://cdn-icons-png.flaticon.com/512/1048/1048953.png"),
+      instituto: icon("https://cdn-icons-png.flaticon.com/512/3135/3135706.png"),
+      academia: icon("https://cdn-icons-png.flaticon.com/512/3135/3135706.png")
+    };
+
+    const overpassQuery = `
+[out:json][timeout:25];
+area["name"="Huánuco"]["admin_level"="8"]->.a;
+(
+  node(area.a)["amenity"="place_of_worship"];
+  way(area.a)["amenity"="place_of_worship"];
+  relation(area.a)["amenity"="place_of_worship"];
+  node(area.a)["leisure"="park"];
+  way(area.a)["leisure"="park"];
+  relation(area.a)["leisure"="park"];
+  node(area.a)["amenity"="hospital"];
+  way(area.a)["amenity"="hospital"];
+  relation(area.a)["amenity"="hospital"];
+  node(area.a)["amenity"="clinic"];
+  way(area.a)["amenity"="clinic"];
+  relation(area.a)["amenity"="clinic"];
+  node(area.a)["healthcare"="dispensary"];
+  way(area.a)["healthcare"="dispensary"];
+  relation(area.a)["healthcare"="dispensary"];
+  node(area.a)["healthcare"="primary_care"];
+  way(area.a)["healthcare"="primary_care"];
+  relation(area.a)["healthcare"="primary_care"];
+  node(area.a)["amenity"="kindergarten"];
+  way(area.a)["amenity"="kindergarten"];
+  relation(area.a)["amenity"="kindergarten"];
+  node(area.a)["amenity"="school"];
+  way(area.a)["amenity"="school"];
+  relation(area.a)["amenity"="school"];
+  node(area.a)["amenity"="university"];
+  way(area.a)["amenity"="university"];
+  relation(area.a)["amenity"="university"];
+  node(area.a)["amenity"="college"];
+  way(area.a)["amenity"="college"];
+  relation(area.a)["amenity"="college"];
+  node(area.a)["amenity"="training"];
+  way(area.a)["amenity"="training"];
+  relation(area.a)["amenity"="training"];
+);
+out center tags;
+`;
+
+    fetch("https://overpass-api.de/api/interpreter", {
+      method: "POST",
+      body: overpassQuery
+    })
+      .then(res => res.json())
+      .then(data => {
+        data.elements.forEach(el => {
+          const lat = el.lat || el.center?.lat;
+          const lon = el.lon || el.center?.lon;
+          if (!lat || !lon) return;
+
+          const tags = el.tags || {};
+          const nombre = tags.name || "Sin nombre";
+          let tipo = null;
+          let label = "";
+
+          if (tags.amenity === "place_of_worship") {
+            if ((tags.denomination || "").toLowerCase().includes("catholic") || (tags.religion || "").toLowerCase() === "christian") {
+              tipo = "iglesiaCatolica";
+              label = "Iglesia Católica";
+            } else {
+              tipo = "iglesiaNoCatolica";
+              label = "Iglesia No Católica";
+            }
+          } else if (tags.leisure === "park") {
+            tipo = "parque";
+            label = "Parque";
+          } else if (tags.amenity === "hospital") {
+            tipo = "hospital";
+            label = "Hospital";
+          } else if (tags.amenity === "clinic") {
+            tipo = "centroSalud";
+            label = "Centro de Salud";
+          } else if (
+            tags.healthcare === "dispensary" ||
+            tags.healthcare === "primary_care"
+          ) {
+            tipo = "puestoSalud";
+            label = "Puesto de Salud";
+          } else if (tags.amenity === "kindergarten") {
+            tipo = "cei";
+            label = "Centro Educativo Inicial";
+          } else if (tags.amenity === "school") {
+            const isced = tags["isced:level"] || "";
+            if (isced.includes("2") || isced.includes("3")) {
+              tipo = "secundaria";
+              label = "Escuela Secundaria";
+            } else {
+              tipo = "primaria";
+              label = "Escuela Primaria";
+            }
+          } else if (tags.amenity === "university") {
+            tipo = "universidad";
+            label = "Universidad";
+          } else if (tags.amenity === "college") {
+            tipo = "instituto";
+            label = "Instituto Superior";
+          } else if (tags.amenity === "training") {
+            tipo = "academia";
+            label = "Academia";
+          }
+
+          if (tipo) {
+            L.marker([lat, lon], { icon: icons[tipo] })
+              .addTo(map)
+              .bindPopup(`<b>${nombre}</b><br><i>${label}</i>`);
+          }
+        });
+      })
+      .catch(err => console.error("Error al obtener datos:", err));
+  </script>
+</body>
+</html>

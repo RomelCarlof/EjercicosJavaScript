@@ -7,28 +7,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-  }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
 
-  #map {
-    width: 100%;
-    height: 100vh;
-  }
+    #map {
+      width: 100%;
+      height: 100vh;
+    }
 
-  .sector-label {
-    background: none;
-    border: none;
-    color: black;
-    font-weight: bold;
-    font-size: 20px;
-    box-shadow: none;
-  }
-</style>
+    .sector-label {
+      background: none;
+      border: none;
+      color: black;
+      font-weight: bold;
+      font-size: 20px;
+      box-shadow: none;
+    }
+  </style>
 
 </head>
 
@@ -37,12 +37,14 @@
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
+
     var map = L.map('map').setView([-9.9306, -76.2422], 16);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       maxZoom: 19,
-      attribution: '© OpenStreetMap contributors'
+      attribution: '© OpenStreetMap & Carto'
     }).addTo(map);
+
 
     function addCoordinatesPopup(lat, lng) {
       L.marker([lat, lng]).addTo(map)
@@ -54,6 +56,69 @@
       const lng = e.latlng.lng.toFixed(6);
       addCoordinatesPopup(lat, lng);
     });
+
+    // FUNCION PARA CREAR ICONOS PERSONALIZADOS
+    function crearIcono(nombre) {
+      return L.icon({
+        iconUrl: `iconos/${nombre}.png`,
+        iconSize: [24, 24],
+        iconAnchor: [12, 24],
+        popupAnchor: [0, -24]
+      });
+    }
+
+    // DEFINICION DE ICONOS
+    const iconHospital = crearIcono("hospital");
+    const iconCentroSalud = crearIcono("centro_salud");
+    const iconPuestoSalud = crearIcono("puesto_salud");
+    const iconInicial = crearIcono("educacion_inicial");
+    const iconPrimaria = crearIcono("escuela_primaria");
+    const iconSecundaria = crearIcono("escuela_secundaria");
+    const iconUniversidad = crearIcono("universidad");
+    const iconSuperior = crearIcono("instituto_superior");
+    const iconAcademia = crearIcono("academias");
+    const iconPlaza = crearIcono("plaza");
+    const iconParque = crearIcono("parque");
+    const iconLosa = crearIcono("losa_deportiva");
+    const iconMercado = crearIcono("mercado");
+    const iconComercial = crearIcono("centro_comercial");
+    const iconIglesiaCatolica = crearIcono("iglesia_catolica");
+    const iconIglesiaNoCatolica = crearIcono("iglesia_no_catolica");
+    const iconComisaria = crearIcono("comisaria");
+    const iconCementerio = crearIcono("cementerio");
+    const iconBiblioteca = crearIcono("biblioteca");
+    const iconAeropuerto = crearIcono("aeropuerto");
+    const iconComedor = crearIcono("comedor_popular");
+    const iconBomberos = crearIcono("bomberos");
+    const iconGrifo = crearIcono("grifo");
+
+    // EJEMPLO DE USO DE ICONOS EN COORDENADAS
+    L.marker([-9.9306, -76.2422], { icon: iconHospital }).addTo(map).bindPopup('Hospital');
+    L.marker([-9.9310, -76.2430], { icon: iconCentroSalud }).addTo(map).bindPopup('Centro de Salud');
+    L.marker([-9.9315, -76.2435], { icon: iconPuestoSalud }).addTo(map).bindPopup('Puesto de Salud');
+
+    L.marker([-9.9300, -76.2415], { icon: iconInicial }).addTo(map).bindPopup('Inicial');
+    L.marker([-9.9295, -76.2410], { icon: iconPrimaria }).addTo(map).bindPopup('Primaria');
+    L.marker([-9.9290, -76.2405], { icon: iconSecundaria }).addTo(map).bindPopup('Secundaria');
+    L.marker([-9.9285, -76.2400], { icon: iconUniversidad }).addTo(map).bindPopup('Universidad');
+    L.marker([-9.9280, -76.2395], { icon: iconSuperior }).addTo(map).bindPopup('Superior');
+    L.marker([-9.9275, -76.2390], { icon: iconAcademia }).addTo(map).bindPopup('Academia');
+
+    L.marker([-9.9260, -76.2380], { icon: iconPlaza }).addTo(map).bindPopup('Plaza');
+    L.marker([-9.9255, -76.2375], { icon: iconParque }).addTo(map).bindPopup('Parque');
+    L.marker([-9.9250, -76.2370], { icon: iconLosa }).addTo(map).bindPopup('Losa');
+    L.marker([-9.9245, -76.2365], { icon: iconMercado }).addTo(map).bindPopup('Mercado');
+    L.marker([-9.9240, -76.2360], { icon: iconComercial }).addTo(map).bindPopup('Centro Comercial');
+    L.marker([-9.9235, -76.2355], { icon: iconIglesiaCatolica }).addTo(map).bindPopup('Iglesia Católica');
+    L.marker([-9.9230, -76.2350], { icon: iconIglesiaNoCatolica }).addTo(map).bindPopup('Iglesia No Católica');
+    L.marker([-9.9225, -76.2345], { icon: iconComisaria }).addTo(map).bindPopup('Comisaría');
+
+    L.marker([-9.9220, -76.2340], { icon: iconCementerio }).addTo(map).bindPopup('Cementerio');
+    L.marker([-9.9215, -76.2335], { icon: iconBiblioteca }).addTo(map).bindPopup('Biblioteca');
+    L.marker([-9.9210, -76.2330], { icon: iconAeropuerto }).addTo(map).bindPopup('Aeropuerto');
+    L.marker([-9.9205, -76.2325], { icon: iconComedor }).addTo(map).bindPopup('Comedor Popular');
+    L.marker([-9.9200, -76.2320], { icon: iconBomberos }).addTo(map).bindPopup('Bomberos');
+    L.marker([-9.9195, -76.2315], { icon: iconGrifo }).addTo(map).bindPopup('Grifo');
 
     // Polígono 1
     L.polygon([
@@ -226,6 +291,21 @@
       [-9.911809, -76.234152], [-9.914429, -76.232715], [-9.924737, -76.233659], [-9.927209, -76.234303],
       [-9.929004, -76.233530], [-9.930229, -76.233788], [-9.931919, -76.235526], [-9.935701, -76.238744],
       [-9.938785, -76.246834], [-9.941595, -76.248851], [-9.942104, -76.249985]
+    ];
+
+    L.polygon(sectorCoords, { color: 'brow' }).addTo(map).bindPopup('Huánuco')
+      .bindTooltip('SECTOR 06', { permanent: true, direction: 'center', className: 'sector-label' });
+
+
+
+    L.marker([-9.9306, -76.2422])
+      .addTo(map)
+      .bindPopup('<b>Ciudad de Huánuco</b><br>Lat: -9.9306<br>Lng: -76.2422')
+      .openPopup();
+  </script>
+</body>
+
+</html>
     ];
 
     L.polygon(sectorCoords, { color: 'brow' }).addTo(map).bindPopup('Huánuco')
