@@ -41,28 +41,38 @@
       attribution: "© OpenStreetMap & Carto"
     }).addTo(map);
 
-    function icon(url) {
-      return L.icon({ iconUrl: url, iconSize: [28, 28], iconAnchor: [14, 28] });
+    function icon(url, size = [28, 28]) {
+      return L.icon({
+        iconUrl: url,
+        iconSize: size,
+        iconAnchor: [size[0] / 2, size[1]],
+        popupAnchor: [0, -size[1] / 2]
+      });
     }
 
     const icons = {
-      iglesiaCatolica: icon("icons/IGLESIA CATOLICA.png"),
-      iglesiaNoCatolica: icon("icons/IGLESIA  NO CATOLICA.png"),
-      parque: icon("icons/PARQUES.png"),
-      hospital: icon("icons/HOSPITALES.png"),
-      centroSalud: icon("icons/CENTRO_DE_SALU.png"),
-      puestoSalud: icon("icons/PUESTO_SALUD.png"),
-      cei: icon("icons/CENTRO_EDUCATIVO_INICIAL.png"),
-      primaria: icon("icons/PRIMARIA.png"),
-      secundaria: icon("icons/ESCUELA_SECUNDARIA.png"),
-      universidad: icon("icons/UNIVERSIDAD.png"),
-      instituto: icon("icons/INSTITUTO.png"),
-      academia: icon("icons/ACADEMIA.png"),
-      losa: icon("icons/LOZA DEPORTIVA.png"),
-      mercado: icon("icons/MERCADO.png"),
-      comisaria: icon("icons/COMISARIAS.png")
-      
+      iglesiaCatolica: icon("icons/IGLESIA CATOLICA.png", [40, 60]),
+      iglesiaNoCatolica: icon("icons/IGLESIA  NO CATOLICA.png"[40, 60]),
+      parque: icon("icons/PARQUES.png", [40, 60]),
+      hospital: icon("icons/HOSPITALES.png", [40, 60]),
+      centroSalud: icon("icons/CENTRO_DE_SALU.png", [6, 60]),
+      puestoSalud: icon("icons/PUESTO_SALUD.png", [40, 60]),
+      cei: icon("icons/CENTRO_EDUCATIVO_INICIAL.png", [40, 60]),
+      primaria: icon("icons/PRIMARIA.png", [40, 60]),
+      secundaria: icon("icons/ESCUELA_SECUNDARIA.png", [40, 60]),
+      universidad: icon("icons/UNIVERSIDAD.png", [40, 60]),
+      instituto: icon("icons/INSTITUTO.png", [40, 60]),
+      academia: icon("icons/ACADEMIA.png", [40, 60]),
+      losa: icon("icons/LOZA DEPORTIVA.png", [40, 60]),
+      mercado: icon("icons/MERCADO.png", [40, 60]),
+      comisaria: icon("icons/COMISARIAS.png", [40, 60]),
+      homicidio: icon("icons/rojo1.png", [60, 60])
     };
+
+     // Sector 1: Ejemplo con marcador de homicidio
+    L.marker([-9.925, -76.242], { icon: icons.homicidio })
+      .addTo(map)
+      .bindPopup("<b>Homicidio</b><br><i>Sector 1</i>");
 
     const overpassQuery = `
 [out:json][timeout:25];
