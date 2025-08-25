@@ -6,26 +6,29 @@
     let ciudadMayor;
     let nombreCiudad;
     let  poblacionMayor, poblacionActual;
+    let provinciaMayor = 0;
     
     provincias = 3;
     ciudades = 11;
     poblacionMayor = 0;
-    ciudadMayor = ""
+    ciudadMayor = "";
+
 	
-    for (i = 1; i<=provincias, i++)
-        Escribir "Provincia ", i, ":"
-        Para j <- 1 Hasta ciudades Hacer
-            Escribir "Ingrese el nombre de la ciudad ", j, ": "
-            Leer nombreCiudad
-            Escribir "Ingrese la población de ", nombreCiudad, ": "
-            Leer poblacionActual
-			
-            Si poblacionActual > poblacionMayor Entonces
-                poblacionMayor <- poblacionActual
-                ciudadMayor <- nombreCiudad
-            FinSi
-        Fin Para
-    Fin Para
-	
-    Escribir "La ciudad con mayor población es: ", ciudadMayor, " con ", poblacionMayor, " habitantes."
-FinProceso
+  
+    for (i = 1; i <= provincias; i++) {
+    console.log("Provincia " + i);
+
+        for ( j = 1;  j<= ciudades; j++){
+            nombreCiudad = prompt("Ingrese el nombre de la ciudad " + j +  " de la provincia " + i + ": ");
+            poblacionActual = parseInt(prompt("Ingrese la población de " + nombreCiudad + ": "), 10);
+            
+            if (poblacionActual > poblacionMayor){
+                poblacionMayor = poblacionActual;
+                ciudadMayor = nombreCiudad;
+                provinciaMayor = i; // guardamos la provincia también
+            } 
+        }
+    }
+    console.log("---------------------------------------------");
+    console.log("La ciudad con mayor población es: " + ciudadMayor + " con " + poblacionMayor +  " habitantes(Provincia " + provinciaMayor + ").");
+    alert("La ciudad con mayor población es: " + ciudadMayor + " con " + poblacionMayor + " habitantes(Provincia " + provinciaMayor + ").");
