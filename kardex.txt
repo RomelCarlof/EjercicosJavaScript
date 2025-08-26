@@ -1,0 +1,1000 @@
+// =============================================
+// KARDEX MEJORADO - VERSIÓN COMPLETA ACTUALIZADA
+// =============================================
+
+function doGet() {
+  return HtmlService.createHtmlOutput(`
+<html>
+<head>
+    <title>Kardex Institucional Completo</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            padding: 10px; 
+            background: linear-gradient(135deg, #1f3a3d 0%, #2c5357 100%); 
+            margin: 0; 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        .form { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 15px; 
+            max-width: 600px; 
+            width: 100%; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+        }
+        .login-form { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 15px; 
+            max-width: 500px; 
+            width: 100%; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+            text-align: center; 
+        }
+        h1 { 
+            color: #1f3a3d; 
+            text-align: center; 
+            margin-bottom: 10px; 
+            font-size: clamp(22px, 5vw, 28px); 
+            line-height: 1.2;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px rgba(31, 58, 61, 0.1);
+        }
+        .subtitle { 
+            text-align: center; 
+            color: #666; 
+            margin-bottom: 20px; 
+            font-size: clamp(14px, 3.5vw, 16px); 
+            line-height: 1.4; 
+        }
+        .info-box, .warning-box { 
+            border-radius: 10px; 
+            margin-bottom: 20px; 
+            padding: 15px; 
+        }
+        .info-box { 
+            background: linear-gradient(135deg, #e8f4f5 0%, #d4edda 100%); 
+            border: 2px solid #1f3a3d; 
+        }
+        .warning-box { 
+            background: linear-gradient(135deg, #fff8e7 0%, #fef3cd 100%); 
+            border: 2px solid #d4920a; 
+            box-shadow: 0 4px 15px rgba(212, 146, 10, 0.15);
+        }
+        .info-box h3, .warning-box h3 { 
+            margin-bottom: 10px; 
+            font-size: clamp(16px, 4vw, 18px); 
+        }
+        .info-box h3 { color: #1f3a3d; }
+        .warning-box h3 { color: #d4920a; }
+        .info-box p { color: #2c5357; }
+        .warning-box p { color: #7a5c0a; }
+        .info-box p, .warning-box p { 
+            margin: 5px 0; 
+            font-size: clamp(12px, 3vw, 14px); 
+            line-height: 1.4; 
+        }
+        .field { margin-bottom: 15px; }
+        .field-row { 
+            display: flex; 
+            gap: 10px; 
+            flex-wrap: wrap; 
+        }
+        .field-row .field { flex: 1; min-width: 250px; }
+        label { 
+            display: block; 
+            font-weight: bold; 
+            margin-bottom: 6px; 
+            color: #333; 
+            font-size: clamp(14px, 3.5vw, 15px); 
+        }
+        input, select, textarea { 
+            width: 100%; 
+            padding: 12px; 
+            border: 2px solid #ddd; 
+            border-radius: 8px; 
+            font-size: 16px; 
+            box-sizing: border-box; 
+            transition: border-color 0.3s ease; 
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        select { 
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+        input:focus, select:focus, textarea:focus { 
+            border-color: #1f3a3d; 
+            outline: none; 
+            box-shadow: 0 0 0 3px rgba(31, 58, 61, 0.15); 
+        }
+        textarea { 
+            height: 80px; 
+            resize: vertical; 
+            font-family: inherit; 
+            line-height: 1.4;
+        }
+        .btn { 
+            background: linear-gradient(135deg, #1f3a3d, #2c5357); 
+            color: white; 
+            padding: 15px 20px; 
+            border: none; 
+            border-radius: 25px; 
+            font-size: clamp(16px, 4vw, 18px); 
+            font-weight: bold; 
+            cursor: pointer; 
+            width: 100%; 
+            transition: all 0.3s ease; 
+            touch-action: manipulation;
+            min-height: 50px;
+            box-shadow: 0 4px 15px rgba(31, 58, 61, 0.3);
+        }
+        .btn:hover:not(:disabled) { 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 25px rgba(31, 58, 61, 0.4); 
+            background: linear-gradient(135deg, #2c5357, #1f3a3d);
+        }
+        .btn:active { 
+            transform: translateY(0); 
+        }
+        .btn:disabled { 
+            background: #ccc; 
+            cursor: not-allowed; 
+            transform: none; 
+        }
+        .btn-login { 
+            background: linear-gradient(135deg, #1f3a3d, #0f2729); 
+            box-shadow: 0 4px 15px rgba(31, 58, 61, 0.4);
+        }
+        .btn-login:hover:not(:disabled) { 
+            box-shadow: 0 8px 25px rgba(31, 58, 61, 0.5); 
+            background: linear-gradient(135deg, #0f2729, #1f3a3d);
+        }
+        .required { color: red; }
+        .status { 
+            margin-top: 15px; 
+            padding: 12px; 
+            border-radius: 8px; 
+            text-align: center; 
+            display: none; 
+            font-size: clamp(14px, 3.5vw, 16px);
+        }
+        .success { 
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%); 
+            color: #1f3a3d; 
+            border: 1px solid #1f3a3d; 
+            box-shadow: 0 2px 10px rgba(31, 58, 61, 0.1);
+        }
+        .error { 
+            background: linear-gradient(135deg, #ffeaea 0%, #f8d7da 100%); 
+            color: #721c24; 
+            border: 1px solid #d32f2f; 
+            box-shadow: 0 2px 10px rgba(211, 47, 47, 0.1);
+        }
+        .user-info { 
+            background: linear-gradient(135deg, #f8fafa 0%, #e8f4f5 100%); 
+            border: 1px solid #1f3a3d; 
+            padding: 12px; 
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+        }
+        .user-info h4 { 
+            color: #1f3a3d; 
+            margin-bottom: 8px; 
+            font-size: clamp(14px, 3.5vw, 16px); 
+        }
+        .user-info p { 
+            margin: 0; 
+            font-size: clamp(12px, 3vw, 14px); 
+            word-break: break-all; 
+        }
+        .auto-field { background: #e9ecef; }
+        
+        /* Estilos responsive específicos */
+        @media (max-width: 768px) {
+            body { padding: 5px; }
+            .form, .login-form { 
+                margin: 5px; 
+                padding: 15px; 
+                border-radius: 10px; 
+            }
+            .field-row { 
+                flex-direction: column; 
+                gap: 0; 
+            }
+            .field-row .field { 
+                min-width: unset; 
+            }
+            .info-box, .warning-box { 
+                padding: 12px; 
+                margin-bottom: 15px; 
+            }
+            input, select, textarea { 
+                padding: 14px 12px; 
+                font-size: 16px; /* Evita zoom en iOS */
+            }
+            .btn { 
+                padding: 16px 20px; 
+                min-height: 54px; /* Tamaño táctil recomendado */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body { padding: 2px; }
+            .form, .login-form { 
+                margin: 2px; 
+                padding: 12px; 
+                border-radius: 8px; 
+            }
+            h1 { margin-bottom: 8px; }
+            .subtitle { margin-bottom: 15px; }
+            .field { margin-bottom: 12px; }
+            .info-box, .warning-box { 
+                padding: 10px; 
+                margin-bottom: 12px; 
+            }
+            .user-info { 
+                padding: 10px; 
+                margin-bottom: 12px; 
+            }
+        }
+        
+        /* Optimización para dispositivos táctiles */
+        @media (pointer: coarse) {
+            .btn { 
+                min-height: 48px; 
+                font-size: 16px; 
+            }
+            input, select, textarea { 
+                min-height: 44px; 
+                font-size: 16px; 
+            }
+            label { 
+                font-size: 15px; 
+            }
+        }
+        
+        /* Modo oscuro para dispositivos que lo soporten */
+        @media (prefers-color-scheme: dark) {
+            .form, .login-form { 
+                background: #2d2d2d; 
+                color: #ffffff; 
+            }
+            .user-info { 
+                background: #3a3a3a; 
+                border-color: #555; 
+                color: #ffffff; 
+            }
+            input, select, textarea { 
+                background: #3a3a3a; 
+                border-color: #555; 
+                color: #ffffff; 
+            }
+            input:focus, select:focus, textarea:focus { 
+                border-color: #1f3a3d; 
+                background: #404040; 
+            }
+            label { color: #ffffff; }
+            .subtitle { color: #cccccc; }
+        }
+    </style>
+</head>
+<body>
+    <div id="loginContainer" class="login-form">
+        <h1>🔐 Acceso al Sistema 👨🏻‍💻</h1>
+        <p class="subtitle">Inicie sesión para acceder al DIVREINT PNP HCO 🦉</p>
+        
+        <div class="warning-box">
+            <h3>⚠️ Autenticación Requerida</h3>
+            <p>• Debe iniciar sesión con su cuenta institucional</p>
+            <p>• Solo usuarios autorizados pueden acceder</p>
+            <p>• Sus datos quedarán registrados en el sistema</p>
+        </div>
+        
+        <button class="btn btn-login" onclick="iniciarSesion()">🚀 Iniciar Sesión</button>
+        
+        <div id="loginStatus" class="status"></div>
+    </div>
+
+    <div id="formContainer" class="form" style="display: none;">
+        <h1>📋 🦉 DIVREINT PNP HCO 🦉</h1>
+        <p class="subtitle">Sistema de Registro de Documentos </p>
+        
+               
+        <div class="user-info">
+            <h4>👤 Usuario Conectado</h4>
+            <p id="userEmail">Cargando información del usuario...</p>
+        </div>
+        
+        <div class="field">
+            <label>Tipo de Documento <span class="required">*</span></label>
+            <select id="tipo" required>
+                <option value="">Seleccione el tipo de documento</option>
+                <option value="Oficio">📄 Oficio</option>
+                <option value="Nota de Información">📢 Nota de Información</option>
+                <option value="Apreciación de Inteligencia">🔍 Apreciación de Inteligencia</option>
+                <option value="Plan de Actividad de Inteligencia">📋 Plan de Actividad de Inteligencia</option>
+                <option value="Nota de Agente">👤 Nota de Agente</option>
+                <option value="Informe">📊 Informe</option>
+                <option value="Pedido de Información">❓ Pedido de Información</option>
+                <option value="Devolución">↩️ Devolución</option>
+                <option value="Elevación">⬆️ Elevación</option>
+                <option value="Memorándum">📝 Memorándum</option>
+                <option value="Decreto">⚖️ Decreto</option>
+                <option value="Mensaje de Alerta">🚨 Mensaje de Alerta</option>
+                <option value="Orden Telefónica">📞 Orden Telefónica</option>
+                <option value="Plan de Trabajo">📅 Plan de Trabajo</option>
+            </select>
+        </div>
+        
+        <div class="field">
+            <label>Descripción del Documento <span class="required">*</span></label>
+            <textarea id="descripcion" placeholder="Describa brevemente el contenido del documento..." required></textarea>
+        </div>
+        
+        <div class="field-row">
+            <div class="field">
+                <label>Fecha del Documento <span class="required">*</span></label>
+                <input type="date" id="fecha" required>
+            </div>
+            <div class="field">
+                <label>Usuario que Formula <span class="required">*</span></label>
+                <input type="text" id="usuarioFormula" placeholder="Nombre completo" required>
+            </div>
+        </div>
+        
+        <div class="field">
+            <label>Dirigido A <span class="required">*</span></label>
+            <input type="text" id="dirigidoA" placeholder="Persona o institución a quien va dirigido" required>
+        </div>
+        
+        <div class="field">
+            <label>Email de Responsable <span class="required">*</span></label>
+            <input type="email" id="emailResponsable" placeholder="email@ejemplo.com" required>
+        </div>
+        
+        <button class="btn" id="btnRegistrar" onclick="enviarDatos()">🚀 Registrar Documento</button>
+        
+        <div id="status" class="status"></div>
+    </div>
+    
+    <script>
+        var usuarioLogueado = null;
+        var procesamientoEnCurso = false; // Variable para controlar el procesamiento
+        var documentoYaProcesado = false; // Variable para evitar múltiples procesamientos
+        
+        function iniciarSesion() {
+            var btn = document.querySelector('.btn-login');
+            if (btn.disabled) return; // Si ya está deshabilitado, no hacer nada
+            
+            btn.disabled = true;
+            btn.innerHTML = '⏳ Verificando usuario...';
+            
+            google.script.run
+                .withSuccessHandler(function(userInfo) {
+                    if (userInfo && userInfo.email && userInfo.email !== 'Usuario no identificado') {
+                        usuarioLogueado = userInfo;
+                        mostrarFormulario();
+                    } else {
+                        mostrarEstadoLogin('❌ No se pudo verificar su identidad. Asegúrese de haber iniciado sesión en Google.', 'error');
+                        btn.disabled = false;
+                        btn.innerHTML = '🚀 Iniciar Sesión';
+                    }
+                })
+                .withFailureHandler(function(error) {
+                    mostrarEstadoLogin('❌ Error de autenticación: ' + error.message, 'error');
+                    btn.disabled = false;
+                    btn.innerHTML = '🚀 Iniciar Sesión';
+                })
+                .obtenerInfoUsuario();
+        }
+        
+        function mostrarFormulario() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('formContainer').style.display = 'block';
+            
+            // Establecer fecha de hoy
+            document.getElementById('fecha').value = new Date().toISOString().split('T')[0];
+            
+            // Mostrar información del usuario
+            document.getElementById('userEmail').innerHTML = '📧 ' + usuarioLogueado.email + ' | 🕐 ' + usuarioLogueado.timestamp;
+            
+            // Establecer email del usuario como responsable por defecto
+            document.getElementById('emailResponsable').value = usuarioLogueado.email;
+        }
+        
+        function mostrarEstadoLogin(mensaje, tipo) {
+            var status = document.getElementById('loginStatus');
+            status.innerHTML = mensaje;
+            status.className = 'status ' + tipo;
+            status.style.display = 'block';
+            
+            if (tipo === 'error') {
+                setTimeout(function() {
+                    status.style.display = 'none';
+                }, 5000);
+            }
+        }
+        
+        function enviarDatos() {
+            // VERIFICAR MÚLTIPLES CONDICIONES PARA EVITAR DUPLICADOS
+            if (!usuarioLogueado) {
+                mostrarEstado('❌ Debe iniciar sesión primero', 'error');
+                return;
+            }
+            
+            if (procesamientoEnCurso) {
+                console.log('Procesamiento ya en curso, ignorando click');
+                return; // Ya se está procesando, ignorar
+            }
+            
+            if (documentoYaProcesado) {
+                mostrarEstado('❌ Ya se ha procesado un documento. Recargue la página para registrar otro.', 'error');
+                return;
+            }
+            
+            var btn = document.getElementById('btnRegistrar');
+            if (btn.disabled) {
+                console.log('Botón ya deshabilitado, ignorando click');
+                return; // Botón ya deshabilitado
+            }
+            
+            var tipo = document.getElementById('tipo').value;
+            var descripcion = document.getElementById('descripcion').value;
+            var fecha = document.getElementById('fecha').value;
+            var usuarioFormula = document.getElementById('usuarioFormula').value;
+            var dirigidoA = document.getElementById('dirigidoA').value;
+            var emailResponsable = document.getElementById('emailResponsable').value;
+            
+            // Validaciones
+            if (!tipo || !descripcion || !fecha || !usuarioFormula || !dirigidoA || !emailResponsable) {
+                mostrarEstado('Por favor complete todos los campos obligatorios', 'error');
+                return;
+            }
+            
+            if (descripcion.length < 10) {
+                mostrarEstado('La descripción debe tener al menos 10 caracteres', 'error');
+                return;
+            }
+            
+            if (!emailResponsable.includes('@')) {
+                mostrarEstado('Por favor ingrese un email válido', 'error');
+                return;
+            }
+            
+            // MARCAR INMEDIATAMENTE QUE ESTÁ EN PROCESO
+            procesamientoEnCurso = true;
+            documentoYaProcesado = true;
+            
+            // Deshabilitar botón INMEDIATAMENTE
+            btn.disabled = true;
+            btn.innerHTML = '⏳ Procesando...';
+            
+            console.log('Iniciando procesamiento de documento...');
+            
+            // Enviar datos
+            google.script.run
+                .withSuccessHandler(function(resultado) {
+                    console.log('Documento procesado exitosamente:', resultado);
+                    mostrarExito(resultado);
+                    procesamientoEnCurso = false; // Permitir que termine correctamente
+                })
+                .withFailureHandler(function(error) {
+                    console.log('Error procesando documento:', error);
+                    mostrarEstado('Error: ' + error.message, 'error');
+                    // NO resetear las variables en caso de error para evitar reintentos
+                    btn.innerHTML = '❌ Error - Recargue la página';
+                    procesamientoEnCurso = false;
+                })
+                .procesarDocumentoCompleto(tipo, descripcion, fecha, usuarioFormula, dirigidoA, emailResponsable);
+        }
+        
+        function mostrarEstado(mensaje, tipo) {
+            var status = document.getElementById('status');
+            status.innerHTML = mensaje;
+            status.className = 'status ' + tipo;
+            status.style.display = 'block';
+            
+            if (tipo === 'error') {
+                setTimeout(function() {
+                    status.style.display = 'none';
+                }, 5000);
+            }
+        }
+        
+        function mostrarExito(datos) {
+            document.getElementById('formContainer').innerHTML = \`
+                <div style="text-align: center; padding: 40px;">
+                    <h1 style="color: #4CAF50; font-size: 36px; margin-bottom: 20px;">🎉 ¡DOCUMENTO REGISTRADO!</h1>
+                    <div style="background: linear-gradient(135deg, #4CAF50, #45a049); color: white; padding: 30px; border-radius: 15px; font-size: 42px; font-weight: bold; margin: 30px 0; letter-spacing: 3px; box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);">
+                        \${datos.numero}
+                    </div>
+                    <div style="background: linear-gradient(135deg, #f8fafa 0%, #e8f4f5 100%); padding: 25px; border-radius: 10px; margin: 20px 0; text-align: left; border-left: 5px solid #1f3a3d;">
+                        <h3 style="color: #1f3a3d; margin-bottom: 15px;">📋 Detalles del Registro</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <p><strong style="color: #1f3a3d;">📂 Tipo:</strong> <span style="color: #2c5357;">\${datos.tipo}</span></p>
+                            <p><strong style="color: #1f3a3d;">🔢 Número:</strong> <span style="color: #2c5357;">\${datos.numero}</span></p>
+                            <p><strong style="color: #1f3a3d;">👤 Usuario:</strong> <span style="color: #2c5357;">\${datos.usuarioFormula}</span></p>
+                            <p><strong style="color: #1f3a3d;">📅 Fecha:</strong> <span style="color: #2c5357;">\${datos.fecha}</span></p>
+                            <p><strong style="color: #1f3a3d;">📧 Responsable:</strong> <span style="color: #2c5357;">\${datos.emailResponsable}</span></p>
+                            <p><strong style="color: #1f3a3d;">📁 Guardado en:</strong> <span style="color: #2c5357;">\${datos.hojaDestino}</span></p>
+                        </div>
+                        <p style="margin-top: 15px;"><strong style="color: #1f3a3d;">📝 Descripción:</strong> <span style="color: #2c5357;">\${datos.descripcion}</span></p>
+                        <p><strong style="color: #1f3a3d;">📤 Dirigido a:</strong> <span style="color: #2c5357;">\${datos.dirigidoA}</span></p>
+                        <p><strong style="color: #1f3a3d;">🕐 Registrado:</strong> <span style="color: #2c5357;">\${datos.timestamp}</span></p>
+                        <p><strong style="color: #1f3a3d;">👨‍💻 Por usuario:</strong> <span style="color: #2c5357;">\${datos.emailUsuario}</span></p>
+                    </div>
+                                        <div style="margin-top: 30px;">
+                        <button onclick="window.print()" style="background: #1f3a3d; color: white; padding: 15px 30px; border: none; border-radius: 25px; margin: 10px; cursor: pointer; font-weight: bold;">🖨️ Imprimir Comprobante</button>
+                       <button onclick="window.top.location.href='https://script.google.com/macros/s/AKfycbxckqFmKgTDHfyttwS4Odw3U94qiMY3bJC5x1oybscYc9NQNlUcV6Lis_q9FXERgHg/exec'" style="background: #2c5357; color: white; padding: 15px 30px; border: none; border-radius: 25px; margin: 10px; cursor: pointer; font-weight: bold;">➕ Registrar Otro</button>
+                    </div>
+                </div>
+            \`;
+            
+            // Mostrar alerta
+            setTimeout(function() {
+                alert('✅ ¡DOCUMENTO REGISTRADO EXITOSAMENTE!\\n\\nNúmero: ' + datos.numero + '\\nTipo: ' + datos.tipo + '\\nGuardado en: ' + datos.hojaDestino + '\\n\\n¡Guarde este número para futuras referencias!');
+            }, 1000);
+        }
+        
+        // Evitar doble envío con tecla Enter
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && procesamientoEnCurso) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        // Agregar listener para evitar envío múltiple
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('formContainer');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (!procesamientoEnCurso && !documentoYaProcesado) {
+                        enviarDatos();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+  `);
+}
+
+function obtenerInfoUsuario() {
+  try {
+    var user = Session.getActiveUser();
+    var email = user.getEmail();
+    
+    // Validar que el usuario esté autenticado
+    if (!email || email === '') {
+      throw new Error('Usuario no autenticado');
+    }
+    
+    return {
+      email: email,
+      timestamp: new Date().toLocaleString('es-ES')
+    };
+    
+  } catch (error) {
+    console.log('Error obteniendo info del usuario:', error.toString());
+    throw new Error('No se pudo obtener información del usuario. Asegúrese de haber iniciado sesión.');
+  }
+}
+
+function procesarDocumentoCompleto(tipo, descripcion, fecha, usuarioFormula, dirigidoA, emailResponsable) {
+  try {
+    console.log('=== PROCESANDO DOCUMENTO COMPLETO ===');
+    console.log('Parámetros:', { tipo, descripcion, fecha, usuarioFormula, dirigidoA, emailResponsable });
+    
+    // Obtener información del usuario actual
+    var usuarioActual = obtenerInfoUsuario();
+    
+    // Validar que el usuario esté autenticado
+    if (!usuarioActual.email || usuarioActual.email === 'Usuario no identificado') {
+      throw new Error('Usuario no autenticado. Debe iniciar sesión primero.');
+    }
+    
+    // Validar parámetros
+    if (!tipo || !descripcion || !fecha || !usuarioFormula || !dirigidoA || !emailResponsable) {
+      throw new Error('Faltan parámetros obligatorios');
+    }
+    
+    // Generar número consecutivo
+    var numero = generarNumeroEnHojaEspecifica(tipo);
+    console.log('Número generado:', numero);
+    
+    // Obtener hoja específica o crearla
+    var hojaEspecifica = obtenerOCrearHojaEspecifica(tipo);
+    var nombreHojaDestino = hojaEspecifica.getName();
+    
+    // Preparar datos para guardar
+    var timestamp = new Date();
+    var fila = [
+      timestamp.toLocaleString('es-ES'),  // Fecha y hora de registro
+      tipo,                              // Tipo de documento
+      numero,                           // Número consecutivo
+      descripcion,                      // Descripción
+      fecha,                           // Fecha del documento
+      usuarioFormula,                  // Usuario que formula
+      dirigidoA,                       // Dirigido a
+      emailResponsable,                // Email responsable
+      usuarioActual.email              // Email del usuario que registra
+    ];
+    
+    // Guardar en hoja específica
+    hojaEspecifica.appendRow(fila);
+    console.log('Datos guardados en hoja específica:', nombreHojaDestino);
+    
+    // Guardar también en hoja principal como respaldo
+    var hojaPrincipal = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    hojaPrincipal.appendRow(fila);
+    console.log('Datos guardados también en hoja principal:', hojaPrincipal.getName());
+    
+    // Enviar email de confirmación
+    try {
+      var asunto = '✅ DOCUMENTO REGISTRADO - NÚMERO: ' + numero;
+      var mensaje = `
+¡DOCUMENTO REGISTRADO EXITOSAMENTE! 🎉
+
+📄 NÚMERO DE DOCUMENTO: ${numero}
+
+📋 DETALLES COMPLETOS:
+• Tipo: ${tipo}
+• Número: ${numero}
+• Descripción: ${descripcion}
+• Fecha del documento: ${fecha}
+• Usuario que formula: ${usuarioFormula}
+• Dirigido a: ${dirigidoA}
+• Email responsable: ${emailResponsable}
+• Registrado por: ${usuarioActual.email}
+• Fecha de registro: ${timestamp.toLocaleString('es-ES')}
+• Guardado en hoja: ${nombreHojaDestino}
+
+⚠️ IMPORTANTE: 
+Guarde este número (${numero}) para futuras consultas y referencias.
+
+---
+Sistema de Kardex Institucional
+Este es un mensaje automático
+      `;
+      
+      MailApp.sendEmail(emailResponsable, asunto, mensaje);
+      console.log('Email enviado a:', emailResponsable);
+    } catch (emailError) {
+      console.log('Error enviando email:', emailError.toString());
+    }
+    
+    // Retornar datos para mostrar
+    var resultado = {
+      numero: numero,
+      tipo: tipo,
+      descripcion: descripcion,
+      fecha: fecha,
+      usuarioFormula: usuarioFormula,
+      dirigidoA: dirigidoA,
+      emailResponsable: emailResponsable,
+      emailUsuario: usuarioActual.email,
+      timestamp: timestamp.toLocaleString('es-ES'),
+      hojaDestino: nombreHojaDestino
+    };
+    
+    console.log('=== PROCESO COMPLETADO EXITOSAMENTE ===');
+    return resultado;
+    
+  } catch (error) {
+    console.log('ERROR en procesarDocumentoCompleto:', error.toString());
+    throw new Error('Error procesando documento: ' + error.toString());
+  }
+}
+
+function obtenerOCrearHojaEspecifica(tipoDocumento) {
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  var nombreHoja = 'KARDEX_' + tipoDocumento.replace(/\s+/g, '_').toUpperCase();
+  
+  // Buscar si la hoja ya existe
+  var hoja = spreadsheet.getSheetByName(nombreHoja);
+  
+  if (!hoja) {
+    // Crear nueva hoja
+    hoja = spreadsheet.insertSheet(nombreHoja);
+    
+    // Agregar encabezados
+    var encabezados = [
+      'Fecha Registro',
+      'Tipo Documento', 
+      'Número Consecutivo',
+      'Descripción',
+      'Fecha Documento',
+      'Usuario que Formula',
+      'Dirigido A',
+      'Email Responsable',
+      'Registrado Por'
+    ];
+    
+    hoja.getRange(1, 1, 1, encabezados.length).setValues([encabezados]);
+    
+    // Formatear encabezados
+    var headerRange = hoja.getRange(1, 1, 1, encabezados.length);
+    headerRange.setFontWeight('bold');
+    headerRange.setBackground('#4CAF50');
+    headerRange.setFontColor('white');
+    
+    // Ajustar anchos de columnas
+    hoja.autoResizeColumns(1, encabezados.length);
+    
+    console.log('Hoja creada:', nombreHoja);
+  }
+  
+  return hoja;
+}
+
+function generarNumeroEnHojaEspecifica(tipoDocumento) {
+  var prefijos = {
+    'Oficio': 'OFI',
+    'Nota de Información': 'N.I',
+    'Apreciación de Inteligencia': 'A.I',
+    'Plan de Actividad de Inteligencia': 'P.A.I',
+    'Nota de Agente': 'N.A',
+    'Informe': 'INF',
+    'Pedido de Información': 'P.I',
+    'Devolución': 'DEV',
+    'Elevación': 'ELE',
+    'Memorándum': 'MEMO',
+    'Decreto': 'DEC',
+    'Mensaje de Alerta': 'M.A',
+    'Orden Telefónica': 'O/T',
+    'Plan de Trabajo': 'P.T'
+  };
+  
+  var prefijo = prefijos[tipoDocumento] || 'DOC';
+  
+  try {
+    var hoja = obtenerOCrearHojaEspecifica(tipoDocumento);
+    var ultimaFila = hoja.getLastRow();
+    
+    // Si solo tiene encabezados, empezar en 1
+    if (ultimaFila <= 1) {
+      return prefijo + '-001';
+    }
+    
+    // Contar filas con datos (excluyendo encabezado)
+    var contador = ultimaFila - 1;
+    
+    return prefijo + '-' + String(contador + 1).padStart(3, '0');
+    
+  } catch (error) {
+    console.log('Error generando número:', error.toString());
+    return prefijo + '-' + Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+  }
+}
+
+// ===============================
+// FUNCIONES DE ADMINISTRACIÓN
+// ===============================
+
+function inicializarTodasLasHojasEspecificas() {
+  try {
+    var tiposDocumento = [
+      'Oficio', 'Nota de Información', 'Apreciación de Inteligencia', 
+      'Plan de Actividad de Inteligencia', 'Nota de Agente', 'Informe', 
+      'Pedido de Información', 'Devolución', 'Elevación', 'Memorándum', 
+      'Decreto', 'Mensaje de Alerta', 'Orden Telefónica', 'Plan de Trabajo'
+    ];
+    
+    console.log('=== INICIALIZANDO HOJAS ESPECÍFICAS ===');
+    
+    tiposDocumento.forEach(function(tipo) {
+      var hoja = obtenerOCrearHojaEspecifica(tipo);
+      console.log('✅ Hoja inicializada:', hoja.getName());
+    });
+    
+    console.log('✅ Todas las hojas específicas han sido inicializadas');
+    
+  } catch (error) {
+    console.log('❌ Error inicializando hojas:', error.toString());
+  }
+}
+
+function obtenerEstadisticasCompletas() {
+  try {
+    var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+    var hojas = spreadsheet.getSheets();
+    var stats = {
+      total: 0,
+      porHoja: {},
+      porTipo: {}
+    };
+    
+    hojas.forEach(function(hoja) {
+      var nombre = hoja.getName();
+      if (nombre.startsWith('KARDEX_')) {
+        var filas = hoja.getLastRow() - 1; // Menos encabezado
+        if (filas > 0) {
+          stats.porHoja[nombre] = filas;
+          stats.total += filas;
+          
+          // Extraer tipo del nombre de la hoja
+          var tipo = nombre.replace('KARDEX_', '').replace(/_/g, ' ');
+          stats.porTipo[tipo] = filas;
+        }
+      }
+    });
+    
+    console.log('📊 ESTADÍSTICAS COMPLETAS:');
+    console.log('Total documentos:', stats.total);
+    console.log('Por hoja específica:', stats.porHoja);
+    console.log('Por tipo:', stats.porTipo);
+    
+    return stats;
+    
+  } catch (error) {
+    console.log('❌ Error obteniendo estadísticas:', error.toString());
+  }
+}
+
+function probarSistemaCompleto() {
+  try {
+    console.log('=== PRUEBA SISTEMA COMPLETO ===');
+    
+    var resultado = procesarDocumentoCompleto(
+      'Oficio',
+      'Documento de prueba del sistema completo mejorado',
+      '2025-07-03',
+      'Usuario de Prueba',
+      'Departamento de Pruebas',
+      'test@ejemplo.com'
+    );
+    
+    console.log('✅ Resultado de prueba:', resultado);
+    console.log('✅ Prueba del sistema completo exitosa');
+    
+    return resultado;
+    
+  } catch (error) {
+    console.log('❌ Error en prueba completa:', error.toString());
+    throw error;
+  }
+}
+
+function limpiarTodasLasPruebas() {
+  try {
+    var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+    var hojas = spreadsheet.getSheets();
+    
+    hojas.forEach(function(hoja) {
+      var data = hoja.getDataRange().getValues();
+      
+      // Eliminar filas de prueba
+      for (var i = data.length - 1; i >= 1; i--) {
+        if (data[i].length > 7 && (
+          data[i][7] === 'test@ejemplo.com' || 
+          data[i][5] === 'Usuario de Prueba' ||
+          (data[i][3] && data[i][3].toString().includes('prueba'))
+        )) {
+          hoja.deleteRow(i + 1);
+        }
+      }
+    });
+    
+    console.log('✅ Datos de prueba eliminados de todas las hojas');
+    
+  } catch (error) {
+    console.log('❌ Error limpiando datos de prueba:', error.toString());
+  }
+}
+
+// ===============================
+// FUNCIONES ADICIONALES DE VALIDACIÓN
+// ===============================
+
+function validarUsuarioAutenticado() {
+  try {
+    var user = Session.getActiveUser();
+    var email = user.getEmail();
+    
+    if (!email || email === '') {
+      return {
+        valido: false,
+        mensaje: 'Usuario no autenticado. Debe iniciar sesión con su cuenta de Google.'
+      };
+    }
+    
+    return {
+      valido: true,
+      email: email,
+      mensaje: 'Usuario autenticado correctamente'
+    };
+    
+  } catch (error) {
+    return {
+      valido: false,
+      mensaje: 'Error de autenticación: ' + error.toString()
+    };
+  }
+}
+
+function obtenerListaTiposDocumento() {
+  return [
+    'Oficio', 'Nota de Información', 'Apreciación de Inteligencia', 
+    'Plan de Actividad de Inteligencia', 'Nota de Agente', 'Informe', 
+    'Pedido de Información', 'Devolución', 'Elevación', 'Memorándum', 
+    'Decreto', 'Mensaje de Alerta', 'Orden Telefónica', 'Plan de Trabajo'
+  ];
+}
+
+function verificarEstructuraHojas() {
+  try {
+    var tiposDocumento = obtenerListaTiposDocumento();
+    var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+    var reporte = {
+      hojasExistentes: [],
+      hojasFaltantes: [],
+      totalDocumentos: 0
+    };
+    
+    tiposDocumento.forEach(function(tipo) {
+      var nombreHoja = 'KARDEX_' + tipo.replace(/\s+/g, '_').toUpperCase();
+      var hoja = spreadsheet.getSheetByName(nombreHoja);
+      
+      if (hoja) {
+        var filas = hoja.getLastRow() - 1; // Menos encabezado
+        reporte.hojasExistentes.push({
+          tipo: tipo,
+          hoja: nombreHoja,
+          documentos: filas > 0 ? filas : 0
+        });
+        reporte.totalDocumentos += (filas > 0 ? filas : 0);
+      } else {
+        reporte.hojasFaltantes.push({
+          tipo: tipo,
+          hoja: nombreHoja
+        });
+      }
+    });
+    
+    console.log('📋 REPORTE DE ESTRUCTURA:');
+    console.log('Hojas existentes:', reporte.hojasExistentes.length);
+    console.log('Hojas faltantes:', reporte.hojasFaltantes.length);
+    console.log('Total documentos:', reporte.totalDocumentos);
+    
+    return reporte;
+    
+  } catch (error) {
+    console.log('❌ Error verificando estructura:', error.toString());
+    return null;
+  }
+}
+
+function crearHojasFaltantes() {
+  try {
+    var reporte = verificarEstructuraHojas();
+    
+    if (reporte && reporte.hojasFaltantes.length > 0) {
+      console.log('🔧 Creando hojas faltantes...');
+      
+      reporte.hojasFaltantes.forEach(function(faltante) {
+        obtenerOCrearHojaEspecifica(faltante.tipo);
+        console.log('✅ Hoja creada:', faltante.hoja);
+      });
+      
+      console.log('✅ Todas las hojas faltantes han sido creadas');
+    } else {
+      console.log('✅ Todas las hojas ya existen');
+    }
+    
+  } catch (error) {
+    console.log('❌ Error creando hojas faltantes:', error.toString());
+  }
+}
