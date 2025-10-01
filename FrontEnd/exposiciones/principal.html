@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Psicología Criminal - Portada</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('fondo.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow: hidden;
+    }
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #ffcc00;
+      text-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      color: #ddd;
+    }
+    a button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      background: #ffcc00;
+      color: #111;
+      transition: 0.3s;
+    }
+    a button:hover {
+      background: #ffaa00;
+      transform: scale(1.05);
+    }
+
+    /* 🔹 Contenedor de fotos con nombre */
+    .fotos {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .foto {
+      position: absolute;
+      text-align: center;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgba(0,0,0,0.8);
+    }
+    .foto img {
+      width: 180px;
+      height: 160px;
+      border-radius: 50%;
+      border: 3px solid #ffcc00;
+      object-fit: cover;
+      animation: flotar 6s ease-in-out infinite;
+    }
+    .foto span {
+      display: block;
+      margin-top: 5px;
+    }
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* 🔹 Escudo debajo del botón */
+    .escudo {
+      margin-top: 30px;
+    }
+    .escudo img {
+      width: 350px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <!-- 🔹 Contenedor de fotos con nombres -->
+  <div class="fotos">
+    <div class="foto" style="top: 10%; left: 5%;">
+      <img src="integrante1.jpg" alt="Integrante 1">
+      <span>S1 PNP MALPARTIDA</span>
+    </div>
+    <div class="foto" style="top: 15%; right: 8%;">
+      <img src="integrante2.jpg" alt="Integrante 2">
+      <span>S1 PNP ALVARADO</span>
+    </div>
+    <div class="foto" style="bottom: 20%; left: 10%;">
+      <img src="integrante3.jpg" alt="Integrante 3">
+      <span>S1 PNP IZAGUIRRE</span>
+    </div>
+    <div class="foto" style="bottom: 15%; right: 12%;">
+      <img src="integrante4.jpg" alt="Integrante 4">
+      <span>S2 PNP RENTERA</span>
+    </div>
+    <div class="foto" style="top: 40%; left: 80%;">
+      <img src="integrante5.jpg" alt="Integrante 5">
+      <span>S2 PNP TINTA</span>
+    </div>
+  </div>
+
+  <!-- 🔹 Contenido principal -->
+  <div class="content">
+    <h1>Delito: Concepto, Tipología y Aspectos Psicológicos</h1>
+    <p>Explorando la conducta delictiva desde una mirada jurídica, social y psicológica</p>
+    <a href="presentacion.html"><button>Entrar a la Presentación ▶</button></a>
+
+    <!-- Escudo debajo del botón -->
+    <div class="escudo">
+      <img src="escudo.jpg" alt="Escudo">
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,565 @@
+(function(window)
+{
+	// This function will contain all our code
+	function CustomJSWP()
+	{
+		var _CustomJSWPObject = {};
+
+		/*** VARIABLES ***/
+
+		// Días festivos
+		var diasFestivos = ["20240101","20240329","20240501","20240815","20241012","20241101","20241206","20241225"];
+
+		// Tawk de cada escuela
+		var codigosTawk = {
+			'1'  : "5c6528311f6f7f1f609b234f/default",
+			'2'  : "5c6548586c0a8d38ecc70957/default",
+			'3'  : "5c65269f1f6f7f1f609b2319/default",
+			'4'  : "5c6525a76c0a8d38ecc70479/default",
+			'5'  : "5c65254a1f6f7f1f609b22d8/default",
+			'6'  : "5c6548046c0a8d38ecc7094a/default",
+			'7'  : "5c652d921f6f7f1f609b2453/default",
+			'8'  : "5c652d596c0a8d38ecc7058b/default",
+			'9'  : "5c6548936c0a8d38ecc70961/default",
+			'10' : "5df8c9bb43be710e1d2273a9/default",
+			'11' : "5e0f1a5327773e0d832bac32/default",
+			'12' : "5f22636d4f3c7f1c910d7e5b/default",
+			'13' : "66a21354becc2fed692ae2e4/1i3khn11e",
+			'200': "5c6523d56c0a8d38ecc70438/default", // Utilizada para grupoInenka.com
+		};
+
+		// Quriobot de cada escuela
+		var codigosQuriobot = {
+			'1'  : "O1WwKE78aQbd605j/PkZNLEkYyQm5XGaR",
+			'2'  : "O1WwKE78aQbd605j/O1WwKE7WlpEd605j",
+			'3'  : "O1WwKE78aQbd605j/kePlpbPqWMm0ozya",
+			'4'  : "O1WwKE78aQbd605j/KoPqxmzA9jbg5eNl",
+			'5'  : "O1WwKE78aQbd605j/MnyjZrgkeOrdv40x",
+			'6'  : "O1WwKE78aQbd605j/lD1XMmdZwoEPVZKN",
+			'7'  : "O1WwKE78aQbd605j/YnoWjb4Na4r8lVax",
+			'8'  : "O1WwKE78aQbd605j/9W6vdbOzg4EyBJ3p",
+			'9'  : "O1WwKE78aQbd605j/oBJGPbalZQENKWQM",
+			'10' : "O1WwKE78aQbd605j/9nJaZmpAVGrpvxPR",
+			'11' : "O1WwKE78aQbd605j/a01M4EWO4DExN9J7",
+			'12' : "O1WwKE78aQbd605j/BNYyPbDkaGEe3lVQ",
+			'13' : "O1WwKE78aQbd605j/wKYPWr6pKKbd0px4",
+			'100': "O1WwKE78aQbd605j/p6yDjmQoqME32lqX", // Utilizada para grupoInenka.lat
+		};
+
+		// WhatsApp cada escuela
+		var telefonosWhatsApp = { 
+			'1'  : "34636736532",
+			'2'  : "34636736532",
+			'3'  : "34636736532",
+			'4'  : "34636736532",
+			'5'  : "34636736532",
+			'6'  : "34636736532",
+			'7'  : "34636736532",
+			'8'  : "34636736532",
+			'9'  : "34636736532",
+			'10' : "34636736532",
+			'11' : "34636736532",
+			'12' : "34636736532",
+			'13' : "34636736532",
+			'100': "34636736532", // Utilizada para grupoInenka.lat
+			'200': "34636736532", // Utilizada para grupoInenka.com
+		};
+
+		// Nombres de cada escuela
+		var nombresCortosEscuelas = { 
+			'1' : "Inenka Business School",
+			'2' : "Escuela El Gremio",
+			'3' : "Instituto Europeo de Educación",
+			'4' : "Centro de Estudios de Psicología",
+			'5' : "Escuela de Ciencias Jurídicas",
+			'6' : "Fintech School",
+			'7' : "Ielogis",
+			'8' : "Escuela de Turismo y Gastronomía de los Pirineos",
+			'9' : "Escuela Internacional de Dietética, Nutrición y Salud",
+			'10': "Escuela de Postgrado de Ingenieria y Arquitectura",
+			'11': "Escuela de Rendimiento Profesional",
+			'12': "San Anastasio International School",
+			'13': "Key Iconik",
+			'100': "Grupo Inenka", // Utilizada para grupoinenka.lat
+			'200': "Grupo Inenka", // Utilizada para grupoinenka.com
+		};
+
+		// Escuela activa
+		var idEscuelaActiva = "";
+
+		// Fecha actual
+		var fechaYMD 		= "";
+		var fechaHora 		= "";
+		var fechaMinuto 	= "";
+		var fechaDiaSemana 	= "";
+
+		/*** GETTERS & SETTERS ***/
+
+		// Obtiene los días festivos
+		_CustomJSWPObject.getDiasFestivos = function(){
+			return diasFestivos;
+		};
+
+		// Asigna el valor de ID Escuela Activa
+		_CustomJSWPObject.setIdEscuelaActiva = function(nuevoID){
+			 idEscuelaActiva = nuevoID;
+		};
+
+		// Obtiene el ID Escuela Activa
+		_CustomJSWPObject.getIdEscuelaActiva = function(){
+			return idEscuelaActiva;
+		};
+
+		// Obtiene el código de Tawk de la escuela activa
+		_CustomJSWPObject.getTawkCode = function(){
+			return codigosTawk[this.getIdEscuelaActiva()];
+		};
+
+		// Obtiene el código de Quriobot de la escuela activa
+		_CustomJSWPObject.getQuriobotCode = function(){
+			return codigosQuriobot[this.getIdEscuelaActiva()];
+		};
+
+		// Obtiene el teléfono de WhatsApp de la escuela activa
+		_CustomJSWPObject.getTelefonoWhatsApp = function(){
+			return telefonosWhatsApp[this.getIdEscuelaActiva()];
+		};
+
+		// Obtiene el nombre corto de la escuela activa
+		_CustomJSWPObject.getNombreCortoEscuela = function(){
+			return nombresCortosEscuelas[this.getIdEscuelaActiva()];
+		};
+
+		// Obtiene el valor del diaSemanaActual
+		_CustomJSWPObject.getDiaSemanaActual = function() {
+			return fechaDiaSemana;
+		}
+
+		// Asigna el valor del diaSemanaActual
+		_CustomJSWPObject.setDiaSemanaActual = function(diaSemanaActual){
+			fechaDiaSemana = diaSemanaActual;
+		}
+
+		// Obtiene el valor de HoraActual
+		_CustomJSWPObject.getHoraActual = function(){
+			return fechaHora;
+		}
+
+		// Asigna el valor de HoraActual
+		_CustomJSWPObject.setHoraActual = function(horaActual){
+			fechaHora = horaActual;
+		}
+
+		// Obtiene el valor de MinutoActual
+		_CustomJSWPObject.getMinutoActual = function(){
+			return fechaMinuto;
+		}
+
+		// Asigna el valor de MinutoActual
+		_CustomJSWPObject.setMinutoActual = function(minutoActual){
+			fechaMinuto = minutoActual;
+		}
+
+		// Obtiene el valor de YMDActual
+		_CustomJSWPObject.getYMDActual = function(){
+			return fechaYMD;
+		}
+
+		// Asigna el valor de YMDActual
+		_CustomJSWPObject.setYMDActual = function(ymdActual){
+			fechaYMD = ymdActual;
+		}
+
+		/*** FUNCIONES AUXILIARES ***/
+
+		_CustomJSWPObject.wpIsMobile = function()
+		{
+			 /* Detect mobile browser */
+			if( navigator.userAgent.match(/Mobile/i)
+				|| navigator.userAgent.match(/Android/i)
+				|| navigator.userAgent.match(/Silk/i)
+				|| navigator.userAgent.match(/Kindle/i)
+				|| navigator.userAgent.match(/BlackBerry/i)
+				|| navigator.userAgent.match(/Opera Mini/i)
+				|| navigator.userAgent.match(/Opera Mobi/i) )
+			{
+				return true;
+			}
+
+			return false;
+		}
+
+		_CustomJSWPObject.calcularFechaActual = function(city, offset)
+		{
+			// create Date object for current location
+			var d = new Date();
+
+			// convert to msec
+			// subtract local time zone offset
+			// get UTC time in msec
+			var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+
+			// create new Date object for different city
+			// using supplied offset
+			var nd = new Date(utc + (3600000*offset));
+
+			// Obtenemos el mes actual
+			var mesActual = nd.getMonth() + 1;
+			if(mesActual < 10)
+			{
+				mesActual = '0'+mesActual;
+			}
+
+			// Obtenemos el dia del mes actual
+			var diaActual = nd.getDate();
+			if(diaActual < 10)
+			{
+				diaActual = '0'+diaActual;
+			}
+
+			// Construímos la fecha en formato YMD (ejemplo: 20201124)
+			var ymd = nd.getFullYear().toString() + mesActual.toString() + diaActual.toString();
+
+			// Asignamos los valores de dia de la semana / hora / minuto / ymd
+			_CustomJSWPObject.setDiaSemanaActual(nd.getDay());
+			_CustomJSWPObject.setHoraActual(nd.getHours());
+			_CustomJSWPObject.setMinutoActual(nd.getMinutes());
+			_CustomJSWPObject.setYMDActual(ymd);
+		}
+
+		// Añadir Tawk
+		_CustomJSWPObject.includeCodeTawk = function()
+		{
+			var codigoTawkEscuela = _CustomJSWPObject.getTawkCode();
+
+			if( (codigoTawkEscuela !== undefined) && (codigoTawkEscuela != "") && (codigoTawkEscuela != null) )
+			{
+				var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+				(function(){
+				var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+				s1.async=true;
+				s1.src='https://embed.tawk.to/' + codigoTawkEscuela;
+				s1.charset='UTF-8';
+				s1.setAttribute('crossorigin','*');
+				s0.parentNode.insertBefore(s1,s0);
+				})();
+			}
+		}
+
+		// Añadir Quriobot
+		_CustomJSWPObject.includeCodeQuriobot = function()
+		{
+			var codigoQuriobotEscuela = _CustomJSWPObject.getQuriobotCode();
+
+			if( (codigoQuriobotEscuela !== undefined) && (codigoQuriobotEscuela != "") && (codigoQuriobotEscuela != null) )
+			{
+				var QBa;
+				QBa=document.createElement('script');
+				QBa.type="text/javascript";
+				QBa.src="https://botsrv.com/qb/widget/" + codigoQuriobotEscuela;
+				document.head.appendChild(QBa);
+			}
+		}
+
+		// Añadir Whatsapp
+		_CustomJSWPObject.includeWhatsApp = function()
+		{
+			var telefonoWhatsAppEscuela = _CustomJSWPObject.getTelefonoWhatsApp();
+
+			if( (telefonoWhatsAppEscuela !== undefined) && (telefonoWhatsAppEscuela != "") && (telefonoWhatsAppEscuela != null) )
+			{
+				// Miramos si los campos "customProductSKU" y "customProductTitle" tienen valor (querrá decir que estamos en la página del curso)
+				var customProductSKU 	= document.getElementById("customProductSKU").value;
+				var customProductTitle 	= document.getElementById("customProductTitle").value;
+
+				if( (customProductTitle !== undefined) && (customProductTitle != "") && (customProductTitle != null) )
+				{
+					var textoContacto = encodeURI("Hola *" + _CustomJSWPObject.getNombreCortoEscuela() + "*, solicito información sobre " + customProductTitle + " [" + customProductSKU + "]");
+
+					document.getElementById("divWhatsApp").innerHTML = '<div class="divWhatsAppInterno" style="position: fixed; bottom: 10px; right: 5px; z-index: 99999;width:70px;height:70px;"><a href="https://wa.me/'+telefonoWhatsAppEscuela+'?text='+textoContacto+'"><img src="//codesneca.com/img/whatsapp.png" alt="Botón de información por Whatsapp" width="70" height="70" /></a></div>';
+				}
+				else
+				{
+					var textoContacto = encodeURI("Hola *" + _CustomJSWPObject.getNombreCortoEscuela() + "*, solicito información.");
+
+					document.getElementById("divWhatsApp").innerHTML = '<div class="divWhatsAppInterno" style="position: fixed; bottom: 10px; right: 5px; z-index: 99999;width:70px;height:70px;"><a href="https://wa.me/'+telefonoWhatsAppEscuela+'?text='+textoContacto+'"><img src="//codesneca.com/img/whatsapp.png" alt="Botón de información por Whatsapp" width="70" height="70" /></a></div>';
+				}
+			}
+		}
+
+		/*** FUNCIONES PRINCIPALES ***/
+
+		// Inicializa los valores de la fecha actual (según nuestra zona horaria)
+		_CustomJSWPObject.init = function()
+		{
+			_CustomJSWPObject.calcularFechaActual('Madrid', '+1');
+		}
+
+		// Carcar Tawk/Quriobot en función del día/hora actual
+		_CustomJSWPObject.loadTawkQuirobot = function()
+		{
+			function windowLoadTawkQuriobot()
+			{
+				// Obtener los días festivos
+				var festivos 		= _CustomJSWPObject.getDiasFestivos();
+
+				// Obtener fecha actual
+				var date_ymd		= _CustomJSWPObject.getYMDActual();
+				var hour_1_to_24	= _CustomJSWPObject.getHoraActual();
+				var minute_0_to_59	= _CustomJSWPObject.getMinutoActual();
+				var week_day		= _CustomJSWPObject.getDiaSemanaActual();
+				
+				// Dias festivos
+				if(festivos.indexOf(date_ymd) >= 0)
+				{
+					
+					_CustomJSWPObject.includeCodeQuriobot();
+				}
+				// Dias normales
+				else
+				{
+					// Lunes a Jueves
+					if( (week_day >= 1) && (week_day <= 4) )
+					{
+						if( (hour_1_to_24 >= 9) && (hour_1_to_24 < 20) )
+						{
+							_CustomJSWPObject.includeCodeTawk();
+						}
+						else
+						{
+							_CustomJSWPObject.includeCodeQuriobot();
+						}
+					}
+					// Viernes
+					else if( week_day == 5 )
+					{
+						if( (hour_1_to_24 >= 9) && (hour_1_to_24 < 20) )
+						{
+							_CustomJSWPObject.includeCodeTawk();
+						}
+						else
+						{
+							_CustomJSWPObject.includeCodeQuriobot();
+						}
+					}
+					// Sábados y domingos
+					else
+					{
+						_CustomJSWPObject.includeCodeQuriobot();
+					}
+				}
+			}
+
+			window.onload = windowLoadTawkQuriobot();
+		}
+
+		// Carcar WhatsApp/Tawk/Quriobot en función del día/hora actual
+		_CustomJSWPObject.loadWhatsAppTawkQuirobot = function()
+		{
+			function windowLoadWhatsAppTawkQuriobot()
+			{
+				// Obtener los días festivos
+				var festivos 		= _CustomJSWPObject.getDiasFestivos();
+
+				// Obtener fecha actual
+				var date_ymd		= _CustomJSWPObject.getYMDActual();
+				var hour_1_to_24	= _CustomJSWPObject.getHoraActual();
+				var minute_0_to_59	= _CustomJSWPObject.getMinutoActual();
+				var week_day		= _CustomJSWPObject.getDiaSemanaActual();
+				
+				// Dias festivos
+				if(festivos.indexOf(date_ymd) >= 0)
+				{
+				    				
+					_CustomJSWPObject.includeCodeQuriobot();
+				}
+				// Dias normales
+				else
+				{
+					// Lunes a Jueves
+					if( (week_day >= 1) && (week_day <= 4) )
+					{
+                        if( (hour_1_to_24 >= 9) && (hour_1_to_24 <20) )
+						{
+							_CustomJSWPObject.includeWhatsApp();
+						}
+						else
+						{
+							_CustomJSWPObject.includeCodeQuriobot();
+						}
+					}
+					// Viernes
+					else if( week_day == 5 )
+					{
+						if( (hour_1_to_24 >= 9) && (hour_1_to_24 <20) )
+						{
+							_CustomJSWPObject.includeWhatsApp();
+						}
+						else
+						{
+							_CustomJSWPObject.includeCodeQuriobot();
+						}
+					}
+					// Sábados y domingos
+					else
+					{
+						_CustomJSWPObject.includeCodeQuriobot();
+					}
+				}
+			}
+
+			window.onload = windowLoadWhatsAppTawkQuriobot();
+		}
+		
+		// Carcar WhatsApp/Quriobot en función del día/hora actual
+		_CustomJSWPObject.loadWhatsAppQuirobot = function()
+		{
+			function windowLoadWhatsAppQuirobot()
+			{
+				// Obtener los días festivos
+				var festivos 		= _CustomJSWPObject.getDiasFestivos();
+
+				// Obtener fecha actual
+				var date_ymd		= _CustomJSWPObject.getYMDActual();
+				var hour_1_to_24	= _CustomJSWPObject.getHoraActual();
+				var minute_0_to_59	= _CustomJSWPObject.getMinutoActual();
+				var week_day		= _CustomJSWPObject.getDiaSemanaActual();
+				
+				// Dias festivos
+				if(festivos.indexOf(date_ymd) >= 0)
+				{
+									
+					_CustomJSWPObject.includeCodeQuriobot();
+				}
+				// Dias normales
+				else
+				{
+					// Lunes a Jueves
+					if( (week_day >= 1) && (week_day <= 4) )
+					{
+						if( (hour_1_to_24 >= 9) && (hour_1_to_24 <20) )
+						{
+							_CustomJSWPObject.includeWhatsApp();
+						}
+						else
+						{
+							_CustomJSWPObject.includeCodeQuriobot();
+						}
+                        
+                       
+					}
+					// Viernes
+					else if( week_day == 5 )
+					{
+						if( (hour_1_to_24 >= 9) && (hour_1_to_24 <20) )
+						{
+							_CustomJSWPObject.includeWhatsApp();
+						}
+						else
+						{
+							_CustomJSWPObject.includeCodeQuriobot();
+						}
+					}
+					// Sábados y domingos
+					else
+					{
+						_CustomJSWPObject.includeCodeQuriobot();
+					}
+				}
+			}
+
+			window.onload = windowLoadWhatsAppQuirobot();
+		}
+		
+		// Carcar WhatsApp/Tawk en función del día/hora actual
+		_CustomJSWPObject.loadWhatsAppTawk = function()
+		{
+			function windowLoadWhatsAppTawk()
+			{
+				// Obtener los días festivos
+				var festivos 		= _CustomJSWPObject.getDiasFestivos();
+
+				// Obtener fecha actual
+				var date_ymd		= _CustomJSWPObject.getYMDActual();
+				var hour_1_to_24	= _CustomJSWPObject.getHoraActual();
+				var minute_0_to_59	= _CustomJSWPObject.getMinutoActual();
+				var week_day		= _CustomJSWPObject.getDiaSemanaActual();
+				
+				// Dias festivos
+				if(festivos.indexOf(date_ymd) >= 0)
+				{
+					_CustomJSWPObject.includeCodeQuriobot();
+					//_CustomJSWPObject.includeCodeTawk();
+
+				}
+				// Dias normales
+				else
+				{
+					// Lunes a Jueves
+					if( (week_day >= 1) && (week_day <= 4) )
+					{
+                        if( (hour_1_to_24 >= 9) && (hour_1_to_24 <20 ) )
+						{
+							_CustomJSWPObject.includeWhatsApp();
+						}
+						else
+						{
+							_CustomJSWPObject.includeCodeTawk();
+						}
+					}
+					// Viernes
+					else if( week_day == 5 )
+					{
+						if( (hour_1_to_24 >= 9) && (hour_1_to_24 <20 ) )
+						{
+							_CustomJSWPObject.includeWhatsApp();
+						}
+						else
+						{
+							_CustomJSWPObject.includeCodeTawk();
+						}
+					}
+					// Sábados y domingos
+					else
+					{
+						//_CustomJSWPObject.includeCodeQuriobot();
+                        _CustomJSWPObject.includeCodeTawk();
+					}
+				}
+			}
+
+			window.onload = windowLoadWhatsAppTawk();
+		}
+
+		// Esconder las estrellas en las valoraciones de la homepage
+		_CustomJSWPObject.hideStarsFormHomepage = function()
+		{
+			jQuery("[itemtype='http://schema.org/Service']").hide();
+		}
+
+		// Cargar LazyLoad
+		_CustomJSWPObject.lazyLoad = function()
+		{
+			var vidDefer = document.getElementsByTagName('iframe');
+			for (var i=0; i<vidDefer.length; i++)
+			{
+				if(vidDefer[i].getAttribute('data-src'))
+				{
+					vidDefer[i].setAttribute('src',vidDefer[i].getAttribute('data-src'));
+				}
+			}
+		}
+
+		return _CustomJSWPObject;
+	}
+
+	// We need that our library is globally accesible, then we save in the window
+	if(typeof(window.wpCustomJSWP) === 'undefined')
+	{
+		window.wpCustomJSWP = CustomJSWP();
+
+		wpCustomJSWP.init();
+		
+		window.addEventListener("load", function() { wpCustomJSWP.lazyLoad(); });
+	}
+})(window); // We send the window variable withing our function

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Presentación - Psicología del Delito</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('fondo1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        .slide {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            width: 85%;
+            max-width: 1100px;
+            height: 75%;
+            padding: 30px;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: all 0.8s ease;
+            z-index: 1;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        h1,
+        h2 {
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        p,
+        ul {
+            font-size: 1.2rem;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+        }
+
+        button {
+            margin: 0 10px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            background: #ffcc00;
+            color: #111;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ffaa00;
+        }
+
+        /* 🔹 Estilo mapa conceptual */
+        .mapa-conceptual {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            margin-top: 30px;
+        }
+
+        .mapa-conceptual .nodo {
+            position: absolute;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background: #ffcc00;
+            color: #111;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .mapa-conceptual .raiz {
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffaa00;
+            font-size: 1.3rem;
+        }
+
+        .mapa-conceptual .nivel1 {
+            width: 220px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <div id="slides">
+        <!-- Portada -->
+        <div class="slide active">
+            <h1>El Delito y la Psicología del Delincuente</h1>
+            <p>Presentación académica animada con 20 diapositivas.</p>
+        </div>
+
+        <!-- 1 -->
+        <div class="slide">
+            <h2>1. Introducción</h2>
+            <p>El delito constituye uno de los fenómenos sociales más complejos que enfrenta la humanidad. No se trata
+                únicamente de una acción contraria a la ley, sino de una conducta cargada de significados psicológicos y
+                sociales. Comprender al delincuente desde la perspectiva psicológica permite explicar los factores
+                internos (rasgos de personalidad, motivaciones, conflictos emocionales) y externos (contexto social,
+                económico, cultural) que influyen en su comportamiento. Este análisis integral ayuda a diseñar políticas
+                de prevención más efectivas y a aplicar estrategias
+                de rehabilitación que trasciendan la mera sanción penal..</p>
+            <img src="1.jpg" alt="Introducción"
+                style="display:block; margin:20px auto; width:80%; height:auto; border-radius:10px;">
+
+        </div>
+
+        <!-- 2 -->
+        <div class="slide">
+            <h2>2. Definición de Delito</h2>
+            <p>Es una acción u omisión típica, antijurídica, culpable y punible. Representa una conducta humana que
+                afecta bienes jurídicos relevantes para la sociedad y merece sanción penal.</p>
+            <img src="2.jpg" alt="Introducción"
+                style="display:block; margin:20px auto; width:60%; height:auto; border-radius:10px;">
+        </div>
+
+        <!-- 3 -->
+        <div class="slide">
+            <h2>3. Enfoque Jurídico</h2>
+            <ul>
+                <li><b>Tipicidad:</b> la conducta se ajusta al tipo penal previsto.</li>
+                <li><b>Antijuridicidad:</b> contradice el ordenamiento legal.</li>
+                <li><b>Culpabilidad:</b> la responsabilidad recae en el autor.</li>
+            </ul>
+            <img src="3.jpg" alt="Introducción"
+                style="display:block; margin:20px auto; width:60%; height:auto; border-radius:10px;">
+        </div>
+
+        <!-- 4 -->
+        <div class="slide">
+            <h2>4. Enfoque Psicológico</h2>
+            <p>Desde la psicología, el delito surge de aprendizajes desviados, conflictos emocionales, frustraciones
+                sociales o alteraciones de personalidad. Es también una forma de expresión de conflictos internos.</p>
+            <img src="4.jpg" alt="Introducción"
+                style="display:block; margin:20px auto; width:50%; height:auto; border-radius:10px;">
+        </div>
+
+        <!-- 5 -->
+        <div class="slide">
+            <h2>5. Aspectos Sociales del Delincuente</h2>
+            <ul>
+                <li>Pobreza y desigualdad → frustración y resentimiento.</li>
+                <li>Familia disfuncional → violencia y falta de normas.</li>
+                <li>Entorno marginal → drogas, pandillas, exclusión.</li>
+                <li>Estigmatización → rechazo y falta de oportunidades.</li>
+            </ul>
+            <img src="5.jpg" alt="Introducción"
+                style="display:block; margin:20px auto; width:50%; height:auto; border-radius:10px;">
+        </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="slide">
+        <h2>6. Aspectos Psicológicos del Delincuente</h2>
+        <ul>
+            <li>Impulsividad y baja tolerancia a la frustración.</li>
+            <li>Rasgos antisociales o narcisistas.</li>
+            <li>Conflictos emocionales no resueltos.</li>
+            <li>Trastornos mentales y consumo de sustancias.</li>
+        </ul>
+        <img src="6.jpg" alt="Introducción"
+            style="display:block; margin:20px auto; width:50%; height:auto; border-radius:10px;">
+    </div>
+
+    <!-- 7 -->
+    <div class="slide">
+        <h2>7. Psicología Criminal</h2>
+        <p>No existe un único perfil del delincuente. Existen tipologías que combinan factores sociales, emocionales y
+            de personalidad.</p>
+        <img src="7.jpg" alt="Introducción"
+            style="display:block; margin:20px auto; width:50%; height:auto; border-radius:10px;">
+    </div>
+
+    <!-- 8 -->
+    <div class="slide">
+        <h2>8. Concepto en Psicología Criminal</h2>
+        <div class="mapa-conceptual">
+            <!-- Nodo central -->
+            <div class="nodo raiz">Psicología Criminal</div>
+
+            <!-- Nodos secundarios -->
+            <div class="nodo nivel1" style="top: 25%; left: 20%;">Conducta aprendida<br><small>(Bandura)</small></div>
+            <div class="nodo nivel1" style="top: 25%; left: 70%;">Impulsos internos<br><small>(Freud)</small></div>
+            <div class="nodo nivel1" style="top: 55%; left: 20%;">Frustración social<br><small>(Merton)</small></div>
+            <div class="nodo nivel1" style="top: 55%; left: 70%;">Rasgos de personalidad<br><small>(Eysenck)</small>
+            </div>
+
+            <!-- Líneas -->
+            <div class="linea" style="top: 15%; left: 50%; height: 80px; transform: translateX(-50%);"></div>
+            <div class="linea" style="top: 25%; left: 35%; width: 15%;"></div>
+            <div class="linea" style="top: 25%; left: 50%; width: 20%;"></div>
+            <div class="linea" style="top: 45%; left: 35%; width: 15%;"></div>
+            <div class="linea" style="top: 45%; left: 50%; width: 20%;"></div>
+        </div>
+    </div>
+
+
+
+    <!-- 9 -->
+    <div class="slide">
+        <h2>9. Tipos de Delito</h2>
+        <div class="mapa-conceptual">
+            <!-- Nodo central -->
+            <div class="nodo raiz">Tipos de Delito</div>
+
+            <!-- Nodos secundarios -->
+            <div class="nodo nivel1" style="top: 25%; left: 15%;">
+                Doloso <br><small>El autor busca o acepta el resultado</small>
+            </div>
+            <div class="nodo nivel1" style="top: 25%; left: 70%;">
+                Culposo <br><small>Sin intención, por imprudencia o negligencia</small>
+            </div>
+            <div class="nodo nivel1" style="top: 55%; left: 10%;">
+                De Resultado <br><small>Necesita un efecto material (ej. homicidio)</small>
+            </div>
+            <div class="nodo nivel1" style="top: 55%; left: 50%;">
+                De Actividad <br><small>Basta con ejecutar la acción prohibida</small>
+            </div>
+            <div class="nodo nivel1" style="top: 55%; left: 80%;">
+                De Omisión <br><small>No actuar cuando existe deber legal</small>
+            </div>
+
+            <!-- Líneas -->
+            <div class="linea" style="top: 15%; left: 50%; height: 70px; transform: translateX(-50%);"></div>
+            <div class="linea" style="top: 25%; left: 32%; width: 18%;"></div>
+            <div class="linea" style="top: 25%; left: 50%; width: 20%;"></div>
+            <div class="linea" style="top: 45%; left: 30%; width: 20%;"></div>
+            <div class="linea" style="top: 45%; left: 60%; width: 20%;"></div>
+        </div>
+    </div>
+
+
+    <!-- 10 -->
+    <div class="slide">
+        <h2>10. Delito Doloso</h2>
+        <p>El sujeto actúa con intención de causar el daño o acepta el resultado. Psicológicamente muestra cálculo,
+            frialdad y planificación.</p>
+             <img src="10.jpg" alt="Introducción"
+            style="display:block; margin:20px auto; width:50%; height:auto; border-radius:10px;">
+    </div>
+
+    <!-- 11 -->
+    <div class="slide">
+        <h2>11. Delito Culposo</h2>
+        <p>Ocurre sin intención, pero por negligencia, imprudencia o falta de cuidado. Refleja descuido, exceso de
+            confianza y falta de autocontrol.</p>
+            <img src="11.jpg" alt="Introducción"
+            style="display:block; margin:20px auto; width:50%; height:auto; border-radius:10px;">
+    </div>
+
+    <!-- 12 -->
+    <div class="slide">
+        <h2>12. Delito de Resultado</h2>
+        <p>Necesita que ocurra un efecto material (ejemplo: homicidio). El delincuente se enfoca en su objetivo sin
+            medir las consecuencias sobre otros.</p>
+             <img src="12.jpg" alt="Introducción"
+            style="display:block; margin:20px auto; width:50%; height:auto; border-radius:10px;">
+    </div>
+
+    <!-- 13 -->
+    <div class="slide">
+        <h2>13. Delito de Actividad</h2>
+        <p>Basta con ejecutar la acción (ejemplo: portar armas ilegales). Asociado a impulsividad y necesidad de
+            reafirmar poder.</p>
+    </div>
+
+    <!-- 14 -->
+    <div class="slide">
+        <h2>14. Delito de Omisión</h2>
+        <p>Se produce al no actuar cuando existe un deber legal (ejemplo: omisión de auxilio). Refleja desapego social y
+            falta de empatía.</p>
+            <img src="14.jpg" alt="Introducción"
+            style="display:block; margin:20px auto; width:50%; height:auto; border-radius:10px;">
+    </div>
+
+    <!-- 15 -->
+<div class="slide">
+  <h2>Clasificación de los Delitos</h2>
+  <div class="mapa-conceptual">
+    <!-- Nodo central -->
+    <div class="nodo raiz">Clasificación de los Delitos</div>
+
+    <!-- Nodos secundarios -->
+    <div class="nodo nivel1" style="top: 30%; left: 20%;">
+      Delitos Comunes <br>
+      <small>Afectan a la colectividad en general (ej. homicidio, robo, hurto)</small>
+    </div>
+    <div class="nodo nivel1" style="top: 30%; left: 65%;">
+      Delitos Políticos <br>
+      <small>Atentan contra la seguridad del Estado (ej. terrorismo, rebelión)</small>
+    </div>
+
+    <!-- Líneas -->
+    <div class="linea" style="top: 15%; left: 50%; height: 80px; transform: translateX(-50%);"></div>
+    <div class="linea" style="top: 30%; left: 38%; width: 12%;"></div>
+    <div class="linea" style="top: 30%; left: 50%; width: 15%;"></div>
+  </div>
+</div>
+
+    <!-- 16 -->
+    <div class="slide">
+        <h2>16. Delitos Políticos</h2>
+        <p>Atentan contra la seguridad del Estado (terrorismo, rebelión). Se basan en motivaciones ideológicas,
+            fanatismo y liderazgo.</p>
+               <img src="15.jpg" alt="Introducción"
+            style="display:block; margin:20px auto; width:50%; height:auto; border-radius:10px;">
+    </div>
+
+    <!-- 17 -->
+    <div class="slide">
+        <h2>17. Delitos Instantáneos</h2>
+        <p>Se consuman en un solo acto (ejemplo: hurto). Perfil: impulsivo y oportunista.</p>
+             <img src="16.jpg" alt="Introducción"
+            style="display:block; margin:20px auto; width:50%; height:auto; border-radius:10px;">
+    </div>
+
+    <!-- 18 -->
+    <div class="slide">
+        <h2>18. Delitos Permanentes y Continuados</h2>
+        <ul>
+            <li><b>Permanente:</b> el estado ilícito se prolonga (ejemplo: secuestro). Perfil frío y calculador.</li>
+            <li><b>Continuado:</b> repetición de actos ilícitos (ejemplo: estafa). Perfil persistente y obsesivo.</li>
+        </ul>
+    </div>
+
+    <!-- 19 -->
+    <!-- X -->
+<div class="slide">
+  <h2>Clasificación Según la Clase de Acción Penal</h2>
+  <div class="mapa-conceptual">
+    <!-- Nodo central -->
+    <div class="nodo raiz">Clase de Acción Penal</div>
+
+    <!-- Nodos secundarios -->
+    <div class="nodo nivel1" style="top: 30%; left: 15%;">
+      Pública <br>
+      <small>El Estado persigue de oficio <br>(ej. homicidio, secuestro).</small>
+    </div>
+
+    <div class="nodo nivel1" style="top: 30%; left: 50%;">
+      Privada <br>
+      <small>Depende de la denuncia de la víctima <br>(ej. injuria, calumnia).</small>
+    </div>
+
+    <div class="nodo nivel1" style="top: 30%; left: 80%;">
+      Mixta <br>
+      <small>Requiere denuncia inicial de la víctima <br>y luego continúa el Estado (ej. delitos sexuales).</small>
+    </div>
+
+    <!-- Líneas -->
+    <div class="linea" style="top: 15%; left: 50%; height: 80px; transform: translateX(-50%);"></div>
+    <div class="linea" style="top: 30%; left: 32%; width: 18%;"></div>
+    <div class="linea" style="top: 30%; left: 50%; width: 15%;"></div>
+  </div>
+</div>
+
+
+    <!-- 20 -->
+    <div class="slide">
+        <h2>20. Conclusiones</h2>
+        <ul>
+            <li>El delito es un fenómeno jurídico, social y psicológico.</li>
+            <li>Existen distintos perfiles criminales según el tipo de delito.</li>
+            <li>La psicología criminal ayuda a prevenir y reducir riesgos.</li>
+            <li>La reinserción social disminuye la reincidencia.</li>
+        </ul>
+          <img src="20.jpg" alt="Introducción"
+            style="display:block; margin:20px auto; width:50%; height:auto; border-radius:10px;">
+    </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="prevSlide()">⟨ Anterior</button>
+        <button onclick="nextSlide()">Siguiente ⟩</button>
+        <a href="principal.html"><button>🏠 Inicio</button></a>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        const totalSlides = slides.length; // 21 en total (0 a 20)
+
+        function showSlide(index) {
+            slides.forEach((s, i) => s.classList.toggle('active', i === index));
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) { // llega hasta la 20
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) { // no retrocede más allá de la portada
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+
+</html>
